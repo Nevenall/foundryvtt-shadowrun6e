@@ -2,6 +2,7 @@ import { Character } from "./actors/character.js"
 import { QualitySheet } from "./items/quality-sheet.js"
 import { CharacterSheet } from "./actors/character-sheet.js"
 import { Names, Qualities } from './shadowrun.js'
+import { Quality } from "./items/quality.js"
 
 
 
@@ -131,26 +132,40 @@ Hooks.once("init", async function () {
 
 
 Hooks.once('ready', async function () {
-   const compendium = game.packs.get('shadowrun6e.qualities')
+   // const compendium = game.packs.get('shadowrun6e.qualities')
 
-   compendium.locked = false
+   // compendium.locked = false
 
-   let index = (await compendium.getIndex()).reduce((acc, curr) => {
-      acc[curr.name] = curr
-      return acc
-   }, {})
+   // let index = (await compendium.getIndex()).reduce((acc, curr) => {
+   //    acc[curr.name] = curr
+   //    return acc
+   // }, {})
+
+   // Qualities.forEach(async el => {
+   //    let e = index[el.name]
+   //    if (e) {
+   //       console.log("[qualities] update entity", el)
+   //       // copy id so update works
+   //       el._id = e._id
+   //       compendium.updateEntity(el)
+   //    } else {
+   //       console.log("[qualities] create entity", el)
+   //       compendium.createEntity(el)
+   //    }
+   // })
 
    Qualities.forEach(async el => {
-      let e = index[el.name]
-      if (e) {
-         console.log("[qualities] update entity", el)
-         // copy id so update works
-         el._id = e._id
-         compendium.updateEntity(el)
-      } else {
-         console.log("[qualities] create entity", el)
-         compendium.createEntity(el)
-      }
+      console.log(el)
+
+      let q = new Item(el)
+
+      // debugger
+      game.items.insert(q)
+      
+      console.log(q)
+
+
    })
+
 
 })

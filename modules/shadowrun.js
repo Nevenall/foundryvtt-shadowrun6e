@@ -394,8 +394,6 @@ let calculateCharacterData = function (character) {
 
 }
 
-
-
 let qualities = [{
    "name": "Ambidextrous",
    "type": "quality",
