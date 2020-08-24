@@ -449,3 +449,12 @@ that would probably still have the content issue, but it would be easier to see 
 Still need to figure out how to save the contents somewhere. By default it can save the contents back to the textarea. 
 if we had an event on the text area that triggered when the content changed that could work but I think we would be better off implementing a save button. 
 easier to follow the established pattern. 
+
+## 8.23.2020
+
+Ok, trying to create a subclass for qualities, but apparently its not that easy. I don't like how thing are handled so here is my idea; we will skip compendiums and items and keep the associated quality data with shadowrun.js. Then we'll associate either the name or the whole object to the character. Basically circumvent the whole item nonsense and let the character sheet and class handle qualities. Especially because Qualities are only character things. They don't have an existence outside of that. 
+
+So, character sheet has the functionality to pick and add qualities. 
+I think we store just the `id` of the quality with the character so if we make changes to the quality we don't have to worry about updates. 
+
+Do the same for everything really. 

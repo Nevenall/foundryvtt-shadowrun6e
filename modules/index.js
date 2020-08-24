@@ -17,6 +17,7 @@ Hooks.once("init", async function () {
 
    // Define custom Entity classes
    CONFIG.Actor.entityClass = Character
+   CONFIG.Quality.entityClass = Quality
 
    Combat.prototype._getInitiativeFormula = combatant => {
       let data = combatant.actor.data.data
@@ -31,58 +32,13 @@ Hooks.once("init", async function () {
    Items.registerSheet("shadowrun", QualitySheet, { types: ['quality'], makeDefault: true })
 
 
-   Hooks.on("renderChatMessage", (msg, html, data) => {
-      // check for glitches when rolling #d6cs>4
-      if (!msg.isRoll || !msg.isContentVisible || msg.roll.dice[0].faces !== 6 || !msg.roll.formula.match(/cs>4/i)) return
 
-      let results = msg.roll.dice[0].rolls.reduce((accumulator, current) => {
-         if (current.roll === 1) {
-            accumulator.ones++
-         } else if (current.success) {
-            accumulator.hits++
-         }
-         accumulator.dice++
-         return accumulator
-      }, { ones: 0, hits: 0, dice: 0 })
-
-      let hitText = () => {
-         if (msg.roll.formula.match(/ms/i)) {
-            // if the formula contains margin of success, label with 'net hits'
-            // label with 'hits'
-            if (msg.roll.total === 1 || msg.roll.total === -1) {
-               return 'net hit'
-            } else {
-               return 'net hits'
-            }
-         } else {
-            // label with 'hits'
-            if (msg.roll.total === 1 || msg.roll.total === -1) {
-               return 'hit'
-            } else {
-               return 'hits'
-            }
-         }
-      }
-
-      // add hits/net hits text and indicate glitches
-      if (results.ones > results.dice / 2 && results.hits === 0) {
-         html.find('.dice-total').addClass('glitch')
-         html.find('.dice-total')[0].innerText = 'CRITICAL GLITCH!'
-      } else if (results.ones > results.dice / 2) {
-         html.find('.dice-total').addClass('glitch')
-         html.find('.dice-total').append(`<span> ${hitText()} + glitch</span>`)
-      } else {
-         html.find('.dice-total').append(`<span> ${hitText()}</span>`)
-      }
-
-   })
 
 
    // isEqual helper
    Handlebars.registerHelper("isEqual", function (a, b) {
       return a === b
    })
-
    // lookup the abbreviation of a well know term
    Handlebars.registerHelper("abbreviate", function (term) {
       return Names.abbreviate(term)
@@ -127,45 +83,91 @@ Hooks.once("init", async function () {
 
    })
 
+   // **Qualities
+   var items = game.items;
+
+   Qualities.forEach(async el => {
+      let existing = items.getName(el.name)
+
+      debugger
+      if (existing) {
+         console.log("[qualities] update entity", el)
+         // copy id so update works
+
+
+      } else {
+         let e = await Quality.create(el)
+         console.log("[qualities] create entity", e)
+         items.insert(e)
+      }
+   })
+
+
+   items.render()
+
+
+
+
+
+
+
 
 })
 
 
 Hooks.once('ready', async function () {
-   // const compendium = game.packs.get('shadowrun6e.qualities')
 
-   // compendium.locked = false
-
-   // let index = (await compendium.getIndex()).reduce((acc, curr) => {
-   //    acc[curr.name] = curr
-   //    return acc
-   // }, {})
-
-   // Qualities.forEach(async el => {
-   //    let e = index[el.name]
-   //    if (e) {
-   //       console.log("[qualities] update entity", el)
-   //       // copy id so update works
-   //       el._id = e._id
-   //       compendium.updateEntity(el)
-   //    } else {
-   //       console.log("[qualities] create entity", el)
-   //       compendium.createEntity(el)
-   //    }
-   // })
-
-   Qualities.forEach(async el => {
-      console.log(el)
-
-      let q = new Item(el)
-
-      // debugger
-      game.items.insert(q)
-      
-      console.log(q)
+   // take the qualities from our rules lib and create them as items 
+   // because each quality has it's own calc function that can adjust character data appropriately
 
 
-   })
 
+})
+
+
+
+Hooks.on("renderChatMessage", (msg, html, data) => {
+   // check for glitches when rolling #d6cs>4
+   if (!msg.isRoll || !msg.isContentVisible || msg.roll.dice[0].faces !== 6 || !msg.roll.formula.match(/cs>4/i)) return
+
+   let results = msg.roll.dice[0].rolls.reduce((accumulator, current) => {
+      if (current.roll === 1) {
+         accumulator.ones++
+      } else if (current.success) {
+         accumulator.hits++
+      }
+      accumulator.dice++
+      return accumulator
+   }, { ones: 0, hits: 0, dice: 0 })
+
+   let hitText = () => {
+      if (msg.roll.formula.match(/ms/i)) {
+         // if the formula contains margin of success, label with 'net hits'
+         // label with 'hits'
+         if (msg.roll.total === 1 || msg.roll.total === -1) {
+            return 'net hit'
+         } else {
+            return 'net hits'
+         }
+      } else {
+         // label with 'hits'
+         if (msg.roll.total === 1 || msg.roll.total === -1) {
+            return 'hit'
+         } else {
+            return 'hits'
+         }
+      }
+   }
+
+   // add hits/net hits text and indicate glitches
+   if (results.ones > results.dice / 2 && results.hits === 0) {
+      html.find('.dice-total').addClass('glitch')
+      html.find('.dice-total')[0].innerText = 'CRITICAL GLITCH!'
+   } else if (results.ones > results.dice / 2) {
+      html.find('.dice-total').addClass('glitch')
+      html.find('.dice-total').append(`<span> ${hitText()} + glitch</span>`)
+   } else {
+      html.find('.dice-total').append(`<span> ${hitText()}</span>`)
+   }
 
 })

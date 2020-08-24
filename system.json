@@ -24,13 +24,7 @@
       "path": "lang/en.json"
     }
   ],
-  "packs": [{
-    "name": "qualities",
-    "label": "Qualities",
-    "system": "shadowrun6e",
-    "path": "./packs/qualities.db",
-    "entity": "Item"
-  }],
+  "packs": [],
   "gridDistance": 1,
   "gridUnits": "m",
   "socket": true,
