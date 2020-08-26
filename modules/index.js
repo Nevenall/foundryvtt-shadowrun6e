@@ -17,7 +17,8 @@ Hooks.once("init", async function () {
 
    // Define custom Entity classes
    CONFIG.Actor.entityClass = Character
-   CONFIG.Quality.entityClass = Quality
+   // foundry built around 1 item class it seems
+   // CONFIG.Item.entityClass = Quality
 
    Combat.prototype._getInitiativeFormula = combatant => {
       let data = combatant.actor.data.data
@@ -30,8 +31,6 @@ Hooks.once("init", async function () {
 
    Items.unregisterSheet("core", ItemSheet)
    Items.registerSheet("shadowrun", QualitySheet, { types: ['quality'], makeDefault: true })
-
-
 
 
 
@@ -83,45 +82,13 @@ Hooks.once("init", async function () {
 
    })
 
-   // **Qualities
-   var items = game.items;
-
-   Qualities.forEach(async el => {
-      let existing = items.getName(el.name)
-
-      debugger
-      if (existing) {
-         console.log("[qualities] update entity", el)
-         // copy id so update works
-
-
-      } else {
-         let e = await Quality.create(el)
-         console.log("[qualities] create entity", e)
-         items.insert(e)
-      }
-   })
-
-
-   items.render()
-
-
-
-
-
-
-
-
+  
 })
 
 
 Hooks.once('ready', async function () {
 
-   // take the qualities from our rules lib and create them as items 
-   // because each quality has it's own calc function that can adjust character data appropriately
-
-
-
+ 
 })
 
 
