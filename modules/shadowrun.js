@@ -394,281 +394,252 @@ let calculateCharacterData = function (character) {
 
 }
 
-let qualities = [{
-   "id": "ambidexterous",
-   "name": "Ambidexterous",
-   "karma": -4,
-   "effect": "No penalty for off-hand weapon use.",
-   "description": "You are equally adept at using either your right or left side. Whether shooting a gun, throwing a grenade, or kicking a ball, you can switch it up with the best of them.",
-
-   "keywords": "Positive, Physical",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "analyticalmind",
-   "name": "Analytical Mind",
-   "karma": -3,
-   "effect": "You gain a bonus Edge when you make any Logic-based test.",
-   "description": "You are a master problem solver. You can analyze information to help deduce solutions, while separating useful bits from the distractions and noise.",
-
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "aptitude:astral",
-   "name": "Aptitude (Astral)",
-   "karma": -12,
-   "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
-   "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "aptitude:athletics",
-   "name": "Aptitude (Athletics)",
-   "karma": -12,
-   "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
-   "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "aptitude:biotech",
-   "name": "Aptitude (Biotech)",
-   "karma": -12,
-   "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
-   "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "aptitude:closecombat",
-   "name": "Aptitude (Close Combat)",
-   "karma": -12,
-   "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
-   "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "aptitude:con",
-   "name": "Aptitude (Con)",
-   "karma": -12,
-   "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
-   "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "aptitude:conjuring",
-   "name": "Aptitude (Conjuring)",
-   "karma": -12,
-   "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
-   "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "aptitude:cracking",
-   "name": "Aptitude (Cracking)",
-   "karma": -12,
-   "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
-   "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "aptitude:electronics",
-   "name": "Aptitude (Electronics)",
-   "karma": -12,
-   "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
-   "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "aptitude:enchanting",
-   "name": "Aptitude (Enchanting)",
-   "karma": -12,
-   "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
-   "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "aptitude:engineering",
-   "name": "Aptitude (Engineering)",
-   "karma": -12,
-   "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
-   "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "aptitude:exoticweapons",
-   "name": "Aptitude (Exotic Weapons)",
-   "karma": -12,
-   "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
-   "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "aptitude:firearms",
-   "name": "Aptitude (Firearms)",
-   "karma": -12,
-   "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
-   "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "aptitude:influence",
-   "name": "Aptitude (Influence)",
-   "karma": -12,
-   "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
-   "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "aptitude:outdoors",
-   "name": "Aptitude (Outdoors)",
-   "karma": -12,
-   "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
-   "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "aptitude:perception",
-   "name": "Aptitude (Perception)",
-   "karma": -12,
-   "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
-   "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "aptitude:piloting",
-   "name": "Aptitude (Piloting)",
-   "karma": -12,
-   "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
-   "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "aptitude:sorcery",
-   "name": "Aptitude (Sorcery)",
-   "karma": -12,
-   "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
-   "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "aptitude:stealth",
-   "name": "Aptitude (Stealth)",
-   "karma": -12,
-   "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
-   "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "aptitude:tasking",
-   "name": "Aptitude (Tasking)",
-   "karma": -12,
-   "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
-   "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "astralchameleon",
-   "name": "Aptitude (Astral Chameleon)",
-   "karma": -9,
-   "effect": "Characters receive –2 dice on tests to recognize your aura or astral signature. Your astral signature fades in half the normal time (see p. 159).",
-   "description": "Your aura never seems to stabilize for very long. You have the ability to blend in with the astral environment around you and make it harder to identify and read your aura and astral signature.",
-   "keywords": "Positive, Magical",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "blandness",
-   "name": "Blandness",
-   "karma": -8,
-   "effect": "Characters take a –2 penalty on Memory tests (p. 67) to remember if they have seen you before, and the threshold on tests to notice if you are following or observing them is increased by 1. If the character acquires something permanent and distinctive—obvious, unusual cyberware, a unique tattoo, that sort of thing—they lose this quality. If they acquire something temporarily distinctive, such as an extreme hairdo, the effects are negated until those changes are reversed.",
-   "description": "You are the least interesting person in the world. You’re average height, average weight, average build, average everything. Nothing at all about you tends to stand out, and that can be extremely useful.",
-   "keywords": "Positive, Mental",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "builttough:1",
-   "name": "Built Tough 1",
-   "karma": -4,
-   "effect": "You have a number of additional boxes on your Physical Condition Monitor equal to the rank of this quality.",
-   "description": "You’re built like a brick drekhouse. You’re pretty good at taking a few extra hits before the lights go out.",
-   "keywords": "Positive, Physical",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worldsS/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "builttough:2",
-   "name": "Built Tough 2",
-   "karma": -8,
-   "effect": "You have a number of additional boxes on your Physical Condition Monitor equal to the rank of this quality.",
-   "description": "You’re built like a brick drekhouse. You’re pretty good at taking a few extra hits before the lights go out.",
-   "keywords": "Positive, Physical",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "builttough:3",
-   "name": "Built Tough 3",
-   "karma": -12,
-   "effect": "You have a number of additional boxes on your Physical Condition Monitor equal to the rank of this quality.",
-   "description": "You’re built like a brick drekhouse. You’re pretty good at taking a few extra hits before the lights go out.",
-   "keywords": "Positive, Physical",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-}, {
-   "id": "builttough:4",
-   "name": "Built Tough 4",
-   "karma": -16,
-   "effect": "You have a number of additional boxes on your Physical Condition Monitor equal to the rank of this quality.",
-   "description": "You’re built like a brick drekhouse. You’re pretty good at taking a few extra hits before the lights go out.",
-   "keywords": "Positive, Physical",
-   "source": "Shadowrun Sixth World p. 70",
-   "img": "worlds/shadowrun-redmond-vets/icons/hand.svg",
-   "calc": (character) => { }
-},
+let qualities = {
+   "ambidexterous": {
+      "name": "Ambidexterous",
+      "karma": -4,
+      "effect": "No penalty for off-hand weapon use.",
+      "description": "You are equally adept at using either your right or left side. Whether shooting a gun, throwing a grenade, or kicking a ball, you can switch it up with the best of them.",
+      "keywords": "Positive, Physical",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "analyticalmind": {
+      "name": "Analytical Mind",
+      "karma": -3,
+      "effect": "You gain a bonus Edge when you make any Logic-based test.",
+      "description": "You are a master problem solver. You can analyze information to help deduce solutions, while separating useful bits from the distractions and noise.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "aptitude:astral": {
+      "name": "Aptitude (Astral)",
+      "karma": -12,
+      "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
+      "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "aptitude:athletics": {
+      "name": "Aptitude (Athletics)",
+      "karma": -12,
+      "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
+      "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "aptitude:biotech": {
+      "name": "Aptitude (Biotech)",
+      "karma": -12,
+      "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
+      "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "aptitude:closecombat": {
+      "name": "Aptitude (Close Combat)",
+      "karma": -12,
+      "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
+      "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "aptitude:con": {
+      "name": "Aptitude (Con)",
+      "karma": -12,
+      "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
+      "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "aptitude:conjuring": {
+      "name": "Aptitude (Conjuring)",
+      "karma": -12,
+      "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
+      "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "aptitude:cracking": {
+      "name": "Aptitude (Cracking)",
+      "karma": -12,
+      "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
+      "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "aptitude:electronics": {
+      "name": "Aptitude (Electronics)",
+      "karma": -12,
+      "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
+      "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "aptitude:enchanting": {
+      "name": "Aptitude (Enchanting)",
+      "karma": -12,
+      "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
+      "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "aptitude:engineering": {
+      "name": "Aptitude (Engineering)",
+      "karma": -12,
+      "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
+      "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "aptitude:exoticweapons": {
+      "name": "Aptitude (Exotic Weapons)",
+      "karma": -12,
+      "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
+      "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "aptitude:firearms": {
+      "name": "Aptitude (Firearms)",
+      "karma": -12,
+      "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
+      "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "aptitude:influence": {
+      "name": "Aptitude (Influence)",
+      "karma": -12,
+      "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
+      "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "aptitude:outdoors": {
+      "name": "Aptitude (Outdoors)",
+      "karma": -12,
+      "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
+      "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "aptitude:perception": {
+      "name": "Aptitude (Perception)",
+      "karma": -12,
+      "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
+      "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "aptitude:piloting": {
+      "name": "Aptitude (Piloting)",
+      "karma": -12,
+      "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
+      "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "aptitude:sorcery": {
+      "name": "Aptitude (Sorcery)",
+      "karma": -12,
+      "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
+      "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "aptitude:stealth": {
+      "name": "Aptitude (Stealth)",
+      "karma": -12,
+      "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
+      "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "aptitude:tasking": {
+      "name": "Aptitude (Tasking)",
+      "karma": -12,
+      "effect": "Your skill maximum for the selected skill is 10, instead of 9, and your maximum starting rank is 7, instead of 6.",
+      "description": "The best look up to you. You have the natural potential to be even better than the best in a particular skill.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "astralchameleon": {
+      "name": "Aptitude (Astral Chameleon)",
+      "karma": -9,
+      "effect": "Characters receive –2 dice on tests to recognize your aura or astral signature. Your astral signature fades in half the normal time (see p. 159).",
+      "description": "Your aura never seems to stabilize for very long. You have the ability to blend in with the astral environment around you and make it harder to identify and read your aura and astral signature.",
+      "keywords": "Positive, Magical",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "blandness": {
+      "name": "Blandness",
+      "karma": -8,
+      "effect": "Characters take a –2 penalty on Memory tests (p. 67) to remember if they have seen you before, and the threshold on tests to notice if you are following or observing them is increased by 1. If the character acquires something permanent and distinctive—obvious, unusual cyberware, a unique tattoo, that sort of thing—they lose this quality. If they acquire something temporarily distinctive, such as an extreme hairdo, the effects are negated until those changes are reversed.",
+      "description": "You are the least interesting person in the world. You’re average height, average weight, average build, average everything. Nothing at all about you tends to stand out, and that can be extremely useful.",
+      "keywords": "Positive, Mental",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "builttough:1": {
+      "name": "Built Tough 1",
+      "karma": -4,
+      "effect": "You have a number of additional boxes on your Physical Condition Monitor equal to the rank of this quality.",
+      "description": "You’re built like a brick drekhouse. You’re pretty good at taking a few extra hits before the lights go out.",
+      "keywords": "Positive, Physical",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "builttough:2": {
+      "name": "Built Tough 2",
+      "karma": -8,
+      "effect": "You have a number of additional boxes on your Physical Condition Monitor equal to the rank of this quality.",
+      "description": "You’re built like a brick drekhouse. You’re pretty good at taking a few extra hits before the lights go out.",
+      "keywords": "Positive, Physical",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "builttough:3": {
+      "name": "Built Tough 3",
+      "karma": -12,
+      "effect": "You have a number of additional boxes on your Physical Condition Monitor equal to the rank of this quality.",
+      "description": "You’re built like a brick drekhouse. You’re pretty good at taking a few extra hits before the lights go out.",
+      "keywords": "Positive, Physical",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
+   "builttough:4": {
+      "name": "Built Tough 4",
+      "karma": -16,
+      "effect": "You have a number of additional boxes on your Physical Condition Monitor equal to the rank of this quality.",
+      "description": "You’re built like a brick drekhouse. You’re pretty good at taking a few extra hits before the lights go out.",
+      "keywords": "Positive, Physical",
+      "source": "Shadowrun Sixth World p. 70",
+      "calc": (character) => { }
+   },
 
 
-]
+}
 
 export { calculateCharacterData as CalculateCharacterData, metatypes as Metatypes, names as Names, qualities as Qualities }

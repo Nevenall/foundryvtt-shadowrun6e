@@ -452,9 +452,12 @@ easier to follow the established pattern.
 
 ## 8.23.2020
 
-Ok, trying to create a subclass for qualities, but apparently its not that easy. I don't like how thing are handled so here is my idea; we will skip compendiums and items and keep the associated quality data with shadowrun.js. Then we'll associate either the name or the whole object to the character. Basically circumvent the whole item nonsense and let the character sheet and class handle qualities. Especially because Qualities are only character things. They don't have an existence outside of that. 
+Ok, trying to create a subclass for qualities, but apparently its not that easy. (Keep getting config object is not defined.) I don't like how thing are handled so here is my idea; we will skip compendiums and items and keep the associated quality data with shadowrun.js. Then we'll associate either the name or the whole object to the character. Basically circumvent the whole item nonsense and let the character sheet and class handle qualities. Especially because Qualities are only character things. They don't have an existence outside of that. 
 
 So, character sheet has the functionality to pick and add qualities. 
 I think we store just the `id` of the quality with the character so if we make changes to the quality we don't have to worry about updates. 
 
 Do the same for everything really. 
+
+consider make qualities properties using the id as their property name?
+Can a prop name have a : in it? It cannot, but we can still index reference such names. not ideal maybe, but I think it's better for clarity? At least for qualities that reference other things like aptitudes. 
