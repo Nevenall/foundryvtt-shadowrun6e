@@ -3,8 +3,9 @@
   "title": "Shadowrun 6th World",
   "description": "Shadowrun 6th World game",
   "version": "0.0.29",
-  "templateVersion": 1,
+  "templateVersion": 0,
   "minimumCoreVersion": "0.5.5",
+  "compatibleCoreVersion": "0.6.6",
   "author": "nevenall",
   "esmodules": [
     "modules/index.js"
