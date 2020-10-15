@@ -193,8 +193,6 @@ export class ShadowrunActorSheet extends ActorSheet {
                      callback: (html) => {
                         let rawFormData = new FormData(document.querySelector('form.test-options'))
                         let data = Object.fromEntries(rawFormData.entries())
-                        // todo - if the option to reroll fails is true, then we want to add a r<5 right the d6
-                        // is reroll and explode a 
                         let roll = new Roll(`${test.pool(data.applyStatus) + parseInt(data.adjustPool)}d6${data.explode ? 'x6' : ''}${data.reroll ? 'r<5' : ''}cs>4${data.threshold ? `ms>=${parseInt(data.threshold)}` : ''}`).roll()
 
                         let options = {
