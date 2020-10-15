@@ -2,12 +2,7 @@
 
    <!-- 
     todo - 
-    - dice modifier
-    - apply statuses, or not
-    - optional threshold
-    - edge actions
-    - wild die, at some point
-    may be better as a grid
+    - add an option for wild die, at some point
 -->
    <div class="field">
       <label>Adjust Dice Pool:</label>
@@ -20,6 +15,10 @@
    <div class="field">
       <label>Explode 6s:</label>
       <input type="checkbox" data-dtype="Boolean" name="explode" {{#if explode}} checked="checked" {{/if}} />
+   </div>
+   <div class="field">
+      <label>Reroll Misses:</label>
+      <input type="checkbox" data-dtype="Boolean" name="reroll" {{#if reroll}} checked="checked" {{/if}} />
    </div>
    <div class="field">
       <label>(Optional) Set Threshold:</label>

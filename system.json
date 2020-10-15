@@ -2,10 +2,10 @@
   "name": "shadowrun6e",
   "title": "Shadowrun 6th World",
   "description": "Shadowrun 6th World game",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "templateVersion": 0,
   "minimumCoreVersion": "0.5.5",
-  "compatibleCoreVersion": "0.6.6",
+  "compatibleCoreVersion": "0.7.5",
   "author": "nevenall",
   "esmodules": [
     "modules/index.js"
@@ -18,13 +18,7 @@
     "css/main.css",
     "css/easymde.min.css"
   ],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "lang/en.json"
-    }
-  ],
+  "languages": [],
   "packs": [],
   "gridDistance": 1,
   "gridUnits": "m",

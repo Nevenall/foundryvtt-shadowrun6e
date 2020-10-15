@@ -461,3 +461,18 @@ Do the same for everything really.
 
 consider make qualities properties using the id as their property name?
 Can a prop name have a : in it? It cannot, but we can still index reference such names. not ideal maybe, but I think it's better for clarity? At least for qualities that reference other things like aptitudes. 
+
+## 10.14.2020
+
+TODO - going to add a checkbox to the roll dialog for rerolling fails. Add r<5 to the formula. 
+todo - format the combat section. 
+  only show astral initiative for awakened
+  Start with Initiative on top row
+    we'll have to find out how to make various kinds of initiative work, maybe if you can roll it from your sheet, you can get the correct number 
+  Condition Monitors row
+  Status Effects,
+  Various attack ratings and armor ratings?
+
+then lets see what we can do about qualities. 
+
+
