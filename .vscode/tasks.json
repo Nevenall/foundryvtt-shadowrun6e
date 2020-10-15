@@ -4,9 +4,9 @@
    "version": "2.0.0",
    "tasks": [
       {
-         "label": "echo",
+         "label": "foundry",
          "type": "shell",
-         "command": "echo Hello"
+         "command": "${workspaceFolder}/launch-vtt.bat"
       }
    ]
 }
