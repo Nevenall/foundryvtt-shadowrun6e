@@ -1,6 +1,7 @@
 
 *.swp
-# don't check packs into a public repo without the appropriate permissions
+# don't check packs into a public repo without the appropriate license permissions
 packs/
 node_modules/
 dist/
+debug.log
