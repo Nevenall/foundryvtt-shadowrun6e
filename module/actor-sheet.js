@@ -92,7 +92,7 @@ export class ShadowrunActorSheet extends ActorSheet {
                title: "Save",
 
             }],
-            
+
             autosave: {
                enabled: true,
                delay: 1000,
@@ -177,6 +177,7 @@ export class ShadowrunActorSheet extends ActorSheet {
             adjustPool: 0,
             applyStatus: test.applyStatus,
             explode: false,
+            reroll: false,
             threshold: undefined
          }
          let html = await renderTemplate("systems/shadowrun6e/templates/roll-dialog.html", dialogData)
@@ -192,7 +193,7 @@ export class ShadowrunActorSheet extends ActorSheet {
                      callback: (html) => {
                         let rawFormData = new FormData(document.querySelector('form.test-options'))
                         let data = Object.fromEntries(rawFormData.entries())
-                        let roll = new Roll(`${test.pool(data.applyStatus) + parseInt(data.adjustPool)}d6${data.explode ? 'x' : ''}cs>4${data.threshold ? `ms>=${parseInt(data.threshold)}` : ''}`).roll()
+                        let roll = new Roll(`${test.pool(data.applyStatus) + parseInt(data.adjustPool)}d6${data.explode ? 'x6' : ''}${data.reroll ? 'r<5' : ''}cs>4${data.threshold ? `ms>=${parseInt(data.threshold)}` : ''}`).roll()
 
                         let options = {
                            speaker: { ...ChatMessage.getSpeaker(), ...{ alias: `${game.user.name}${this.actor ? ` for '${this.actor.name}'` : ''}${this.token ? ` as '${this.token.name}'` : ''}` } },

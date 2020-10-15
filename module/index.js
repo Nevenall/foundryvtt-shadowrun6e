@@ -29,10 +29,10 @@ Hooks.once("init", async function () {
 
    Hooks.on("renderChatMessage", (msg, html, data) => {
       // check for glitches when rolling #d6cs>4
-      if (!msg.isRoll || !msg.isContentVisible || msg.roll.dice[0].faces !== 6 || !msg.roll.formula.match(/cs>4/i)) return
+      if (!msg.isRoll || !msg.isContentVisible || msg.roll.terms[0].faces !== 6 || !msg.roll.formula.match(/cs>4/i)) return
 
-      let results = msg.roll.dice[0].rolls.reduce((accumulator, current) => {
-         if (current.roll === 1) {
+      let results = msg.roll.terms[0].results.reduce((accumulator, current) => {
+         if (current.result === 1) {
             accumulator.ones++
          } else if (current.success) {
             accumulator.hits++
@@ -44,12 +44,12 @@ Hooks.once("init", async function () {
       let hitText = () => {
          if (msg.roll.formula.match(/ms/i)) {
             // if the formula contains margin of success, label with 'net hits'
-            // label with 'hits'
             if (msg.roll.total === 1 || msg.roll.total === -1) {
                return 'net hit'
             } else {
                return 'net hits'
             }
+            // otherwise label with 'hits'
          } else {
             // label with 'hits'
             if (msg.roll.total === 1 || msg.roll.total === -1) {
@@ -59,7 +59,6 @@ Hooks.once("init", async function () {
             }
          }
       }
-
       // add hits/net hits text and indicate glitches
       if (results.ones > results.dice / 2 && results.hits === 0) {
          html.find('.dice-total').addClass('glitch')
@@ -93,8 +92,6 @@ Hooks.once("init", async function () {
       return a + b
    })
 
-
-
    // Register an inline markdown editor helper
    Handlebars.registerHelper('md-editor', function (options) {
 
@@ -110,7 +107,7 @@ Hooks.once("init", async function () {
       // Enrich the content
       // this will do foundry specific stuff to html. We want to run it, for secrets and such, but we'll have to do it 
 
-     
+
       let content = options.hash['content'] || ''
       // content = TextEditor.enrichHTML(content, { secrets: owner, entities: true })
 
@@ -121,10 +118,7 @@ Hooks.once("init", async function () {
       let area = `<textarea data-dtype="String" name="data.journal.${options.data.key}.value" data-editor="journal-${options.data.key}">${content}</textarea>`
 
       return new Handlebars.SafeString(area)
-
-
    })
 
-
-
+  
 })

@@ -160,6 +160,8 @@
       }
 
       nav {
+
+         //.sheet nav.sheet-tabs
          margin-top: 1rem;
 
          a {
@@ -175,7 +177,31 @@
          a:last-child {
             margin-right: 0;
          }
+
+
+
+
+
       }
+
+
+      .sheet nav.sheet-tabs {
+         /* height: 32px; */
+         /* flex: 0 0 32px; */
+         /* margin: 4px 0; */
+         /* line-height: 32px; */
+         /* border-top: 1px solid #b5b3a4; */
+         /* border-bottom: 1px solid #b5b3a4; */
+      }
+
+
+      nav.sheet-tabs.tabs {
+         border: none;
+         line-height: initial;
+         height: auto;
+
+      }
+
 
       section {
 

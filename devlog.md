@@ -449,3 +449,18 @@ that would probably still have the content issue, but it would be easier to see 
 Still need to figure out how to save the contents somewhere. By default it can save the contents back to the textarea. 
 if we had an event on the text area that triggered when the content changed that could work but I think we would be better off implementing a save button. 
 easier to follow the established pattern. 
+
+## 10.14.2020
+
+TODO - going to add a checkbox to the roll dialog for rerolling fails. Add r<5 to the formula. 
+todo - format the combat section. 
+  only show astral initiative for awakened
+  Start with Initiative on top row
+    we'll have to find out how to make various kinds of initiative work, maybe if you can roll it from your sheet, you can get the correct number 
+  Condition Monitors row
+  Status Effects,
+  Various attack ratings and armor ratings?
+
+then lets see what we can do about qualities. 
+
+
