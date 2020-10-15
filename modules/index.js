@@ -16,7 +16,7 @@ Hooks.once("init", async function () {
    // Define custom Entity classes
    CONFIG.Actor.entityClass = Character
    // foundry built around 1 item class it seems
-   // CONFIG.Item.entityClass = Quality
+   CONFIG.Item.entityClass = Quality
 
 
    Combat.prototype._getInitiativeFormula = combatant => {
@@ -84,13 +84,18 @@ Hooks.once("init", async function () {
 })
 
 
-Hooks.once('ready', async () => {
+Hooks.once('ready', async (obj) => {
 
+   Item.create({ name: "Test Quality", type: "quality" }).then(item => {
+      // debugger
+
+      item.data.calc('hello')
+
+   })
 
 })
 
 Hooks.on("renderChatMessage", (msg, html, data) => {
-
    // check for glitches when rolling #d6cs>4
    if (!msg.isRoll || !msg.isContentVisible || msg.roll.terms[0].faces !== 6 || !msg.roll.formula.match(/cs>4/i)) return
 

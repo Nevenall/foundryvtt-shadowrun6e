@@ -475,4 +475,8 @@ todo - format the combat section.
 
 then lets see what we can do about qualities. 
 
+Ok, sadness, but we are not going to be able to keep the logic of qualities with the quality data. So we'll have to do the calcs in shadowrun.js just like before and if there is a new quality or something then well have to add support for it. 
+But we can add them to a compendium and import them as needed. no worries there. 
+
+Just have to do a little dataentry. 
 
