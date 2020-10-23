@@ -86,12 +86,12 @@ Hooks.once("init", async function () {
 
 Hooks.once('ready', async (obj) => {
 
-   Item.create({ name: "Test Quality", type: "quality" }).then(item => {
-      // debugger
+   // todo - qualities will be in the compendium. 
+   // Item.create({ name: "Test Quality", type: "quality" }).then(item => {
+   //    // debugger
 
-      item.data.calc('hello')
 
-   })
+   // })
 
 })
 

@@ -369,7 +369,6 @@ let calculateCharacterData = function (character) {
             return character.data.attributes.willpower.value + character.data.attributes[character.data.magic.traditionAttribute].value + (applyStatus ? character.data.status.penalty() : 0)
          }
       }
-
    }
 
    // merge pre-defined and skill tests, and then sort them
