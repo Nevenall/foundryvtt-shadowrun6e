@@ -15,7 +15,6 @@ Hooks.once("init", async function () {
 
    // Define custom Entity classes
    CONFIG.Actor.entityClass = Character
-   // foundry built around 1 item class it seems
    CONFIG.Item.entityClass = Quality
 
 

@@ -2,11 +2,20 @@
 
 This system module implements Shadowrun 6th World​ (edition) for FoundryVTT. 
 
-## Status!
+Although technically a fork of https://github.com/smilligan93/SR5-FoundryVTT this system starts from the groundup. 
 
-I'm actively developing this for the game I'm in. It is technically a fork of the 5th edition repository, but code-wise, I've started from the ground up. 
+## What's Currently Working
 
-Currently the only implemented thing is part of the player character sheet, but stay tuned to the master branch.
+- Character attributes and skills
+- Common dice pools are calculated and rollable *shift click for roll options*
+- Condition tracking with penalties
+- Character Journal entries can be added in markdown
+- Rolls in chat display hits and will calculate glitches
+
+
+## We are Actively Looking for Maintainers
+
+This system is up for adoption. Create an issue https://github.com/Nevenall/foundry-shadowrun6e/issues or find me on twitter if you're interested.
 
 ## Licenses
 
