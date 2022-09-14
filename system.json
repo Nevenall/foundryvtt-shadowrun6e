@@ -1,12 +1,7 @@
 {
-  "name": "shadowrun6e",
   "title": "Shadowrun 6th World",
   "description": "Shadowrun 6th World game",
   "version": "0.0.31",
-  "templateVersion": 0,
-  "minimumCoreVersion": "0.5.5",
-  "compatibleCoreVersion": "0.7.5",
-  "author": "nevenall",
   "esmodules": [
     "modules/index.js"
   ],
@@ -18,12 +13,21 @@
     "css/main.css",
     "css/easymde.min.css"
   ],
-  "languages": [],
-  "packs": [],
   "gridDistance": 1,
   "gridUnits": "m",
   "socket": true,
   "url": "https://github.com/Nevenall/foundry-shadowrun6e",
   "manifest": "https://raw.githubusercontent.com/Nevenall/foundry-shadowrun6e/master/system.json",
-  "download": "https://github.com/Nevenall/foundry-shadowrun6e/archive/master.zip"
+  "download": "https://github.com/Nevenall/foundry-shadowrun6e/archive/master.zip",
+  "id": "shadowrun6e",
+  "authors": [
+    {
+      "name": "nevenall",
+      "flags": {}
+    }
+  ],
+  "compatibility": {
+    "minimum": "0.5.5",
+    "verified": "0.7.5"
+  }
 }
