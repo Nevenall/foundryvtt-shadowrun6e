@@ -1,16 +1,18 @@
-import { series, parallel, src, dest, watch } from 'gulp'
+import gulp from 'gulp'
+let { parallel, series, src, dest, watch } = gulp
 import fs from 'fs'
 import path from 'path'
 import through from 'through2'
 import replace from 'gulp-replace'
-import { init, write } from "gulp-sourcemaps"
-import babel from "gulp-babel"
+import sourcemaps from 'gulp-sourcemaps'
+let  { init, write }  = sourcemaps
+
 import concat from "gulp-concat"
 import gulpif from 'gulp-if'
 import del from 'delete'
 import { dirname } from 'path'
 import Handlebars from 'handlebars'
-import sass from 'node-sass'
+import sass from 'sass'
 import gulpSass from 'gulp-sass'
 import browserSync from 'browser-sync'
 

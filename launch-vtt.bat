@@ -1,1 +1,0 @@
-node "C:\Program Files\FoundryVTT\resources\app\main.js" --port=3030 --dataPath=C:\foundry-dev

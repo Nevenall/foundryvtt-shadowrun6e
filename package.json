@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Nevenall/SR6-FoundryVTT.git"
   },
+  "type": "module",
   "keywords": [
     "FoundryVTT",
     "RPG",
@@ -21,27 +22,19 @@
     "url": "https://github.com/Nevenall/SR6-FoundryVTT/issues"
   },
   "homepage": "https://github.com/Nevenall/SR6-FoundryVTT#readme",
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
-  },
+ 
   "devDependencies": {
-    "@babel/core": "^7.11.1",
-    "@babel/preset-env": "^7.11.0",
-    "@babel/register": "^7.10.5",
     "browser-sync": "^2.26.12",
     "delete": "^1.1.0",
     "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-if": "^3.0.0",
     "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
     "handlebars": "^4.7.6",
-    "node-sass": "^4.14.1",
-    "through2": "^3.0.2"
+    "sass": "^1.55.0",
+    "through2": "^4.0.2"
   },
   "dependencies": {
     "easymde": "^2.11.0"

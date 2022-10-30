@@ -94,46 +94,51 @@ Hooks.once('ready', async (obj) => {
 
 })
 
-Hooks.on("renderChatMessage", (msg, html, data) => {
-   // check for glitches when rolling #d6cs>4
-   if (!msg.isRoll || !msg.isContentVisible || msg.roll.terms[0].faces !== 6 || !msg.roll.formula.match(/cs>4/i)) return
+Hooks.on('renderChatMessage', (msg, html, data) => {
 
-   let results = msg.roll.terms[0].results.reduce((accumulator, current) => {
-      if (current.result === 1) {
-         accumulator.ones++
-      } else if (current.success) {
-         accumulator.hits++
-      }
-      accumulator.dice++
-      return accumulator
-   }, { ones: 0, hits: 0, dice: 0 })
+   if (!msg.isRoll || !msg.isContentVisible) return
 
-   let hitText = () => {
-      if (msg.roll.formula.match(/ms/i)) {
-         // if the formula contains margin of success, label with 'net hits'
-         if (msg.roll.total === 1 || msg.roll.total === -1) {
-            return 'net hit'
-         } else {
-            return 'net hits'
+   for (const roll of msg.rolls) {
+      // check for glitches when rolling #d6cs>4
+      if (roll.terms[0].faces !== 6 || !roll.formula.match(/cs>4/i)) return
+
+      let results = roll.terms[0].results.reduce((accumulator, current) => {
+         if (current.result === 1) {
+            accumulator.ones++
+         } else if (current.success) {
+            accumulator.hits++
          }
-         // otherwise label with 'hits'
+         accumulator.dice++
+         return accumulator
+      }, { ones: 0, hits: 0, dice: 0 })
+
+      let hitText = () => {
+         if (roll.formula.match(/ms/i)) {
+            // if the formula contains margin of success, label with 'net hits'
+            if (roll.total === 1 || roll.total === -1) {
+               return 'net hit'
+            } else {
+               return 'net hits'
+            }
+            // otherwise label with 'hits'
+         } else {
+            // label with 'hits'
+            if (roll.total === 1 || roll.total === -1) {
+               return 'hit'
+            } else {
+               return 'hits'
+            }
+         }
+      }
+      // add hits/net hits text and indicate glitches
+      if (results.ones > results.dice / 2 && results.hits === 0) {
+         html.find('.dice-total').addClass('glitch')
+         html.find('.dice-total')[0].innerText = 'CRITICAL GLITCH!'
+      } else if (results.ones > results.dice / 2) {
+         html.find('.dice-total').addClass('glitch')
+         html.find('.dice-total').append(`<span> ${hitText()} + glitch</span>`)
       } else {
-         // label with 'hits'
-         if (msg.roll.total === 1 || msg.roll.total === -1) {
-            return 'hit'
-         } else {
-            return 'hits'
-         }
+         html.find('.dice-total').append(`<span> ${hitText()}</span>`)
       }
-   }
-   // add hits/net hits text and indicate glitches
-   if (results.ones > results.dice / 2 && results.hits === 0) {
-      html.find('.dice-total').addClass('glitch')
-      html.find('.dice-total')[0].innerText = 'CRITICAL GLITCH!'
-   } else if (results.ones > results.dice / 2) {
-      html.find('.dice-total').addClass('glitch')
-      html.find('.dice-total').append(`<span> ${hitText()} + glitch</span>`)
-   } else {
-      html.find('.dice-total').append(`<span> ${hitText()}</span>`)
    }
 })
