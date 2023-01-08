@@ -1,4 +1,4 @@
-<form class="{{cssClass}} character" autocomplete="off">
+<form class="character" autocomplete="off">
    <header>
       <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" alt="picture of {{actor.img}}" />
       <div class="name row">
@@ -59,7 +59,7 @@
       </div>
    </header>
    <div class="attributes">
-      <div class="attribute" augmented-ui="b-clip-x exe">
+      <div class="attribute" data-augmented-ui="both">
          <p>Body</p>
          <span>{{data.attributes.body.value}}</span>
          <input type="hidden" data-dtype="Number" name="data.attributes.body.value" value="{{data.attributes.body.value}}" />
@@ -72,63 +72,63 @@
             <input type="number" data-dtype="Number" name="data.attributes.body.adj" value="{{data.attributes.body.adj}}" placeholder="±adj" title="Body Adjustment" />
          </div>
       </div>
-      <div class="attribute" augmented-ui="b-clip-x exe">
+      <div class="attribute" data-augmented-ui="b-clip-x exe">
          <p>Agility</p>
          <span>{{data.attributes.agility.value}}</span>
          <input type="hidden" data-dtype="Number" name="data.attributes.agility.value" value="{{data.attributes.agility.value}}" />
          <div class="field"><label>base:</label><input type="number" data-dtype="Number" name="data.attributes.agility.base" value="{{data.attributes.agility.base}}" placeholder="base" title="Base Agility" min="{{data.attributes.agility.min}}" max="{{data.attributes.agility.max}}" /></div>
          <div class="field"><label>adj:</label><input type="number" data-dtype="Number" name="data.attributes.agility.adj" value="{{data.attributes.agility.adj}}" placeholder="±adj" title="Agility Adjustment" /></div>
       </div>
-      <div class="attribute" augmented-ui="b-clip-x exe">
+      <div class="attribute" data-augmented-ui="b-clip-x exe">
          <p>Reaction</p>
          <span>{{data.attributes.reaction.value}}</span>
          <input type="hidden" data-dtype="Number" name="data.attributes.reaction.value" value="{{data.attributes.reaction.value}}" />
          <div class="field"><label>base:</label><input type="number" data-dtype="Number" name="data.attributes.reaction.base" value="{{data.attributes.reaction.base}}" placeholder="base" title="Base Reaction" min="{{data.attributes.reaction.min}}" max="{{data.attributes.reaction.max}}" /></div>
          <div class="field"><label>adj:</label><input type="number" data-dtype="Number" name="data.attributes.reaction.adj" value="{{data.attributes.reaction.adj}}" placeholder="±adj" title="Reaction Adjustment" /></div>
       </div>
-      <div class="attribute" augmented-ui="b-clip-x exe">
+      <div class="attribute" data-augmented-ui="b-clip-x exe">
          <p>Strength</p>
          <span>{{data.attributes.strength.value}}</span>
          <input type="hidden" data-dtype="Number" name="data.attributes.strength.value" value="{{data.attributes.strength.value}}" />
          <div class="field"><label>base:</label><input type="number" data-dtype="Number" name="data.attributes.strength.base" value="{{data.attributes.strength.base}}" placeholder="base" title="Base Strength" min="{{data.attributes.strength.min}}" max="{{data.attributes.strength.max}}" /></div>
          <div class="field"><label>adj:</label><input type="number" data-dtype="Number" name="data.attributes.strength.adj" value="{{data.attributes.strength.adj}}" placeholder="±adj" title="Strength Adjustment" /></div>
       </div>
-      <div class="attribute" augmented-ui="b-clip-x exe">
+      <div class="attribute" data-augmented-ui="b-clip-x exe">
          <p>Willpower</p>
          <span>{{data.attributes.willpower.value}}</span>
          <input type="hidden" data-dtype="Number" name="data.attributes.willpower.value" value="{{data.attributes.willpower.value}}" />
          <div class="field"><label>base:</label><input type="number" data-dtype="Number" name="data.attributes.willpower.base" value="{{data.attributes.willpower.base}}" placeholder="base" title="Base Willpower" min="{{data.attributes.willpower.min}}" max="{{data.attributes.willpower.max}}" /></div>
          <div class="field"><label>adj:</label><input type="number" data-dtype="Number" name="data.attributes.willpower.adj" value="{{data.attributes.willpower.adj}}" placeholder="±adj" title="Willpower Adjustment" /></div>
       </div>
-      <div class="attribute" augmented-ui="b-clip-x exe">
+      <div class="attribute" data-augmented-ui="b-clip-x exe">
          <p>Logic</p>
          <span>{{data.attributes.logic.value}}</span>
          <input type="hidden" data-dtype="Number" name="data.attributes.logic.value" value="{{data.attributes.logic.value}}" />
          <div class="field"><label>base:</label><input type="number" data-dtype="Number" name="data.attributes.logic.base" value="{{data.attributes.logic.base}}" placeholder="base" title="Base Logic" min="{{data.attributes.logic.min}}" max="{{data.attributes.logic.max}}" /></div>
          <div class="field"><label>adj:</label><input type="number" data-dtype="Number" name="data.attributes.logic.adj" value="{{data.attributes.logic.adj}}" placeholder="±adj" title="Logic Adjustment" /></div>
       </div>
-      <div class="attribute" augmented-ui="b-clip-x exe">
+      <div class="attribute" data-augmented-ui="b-clip-x exe">
          <p>Intuition</p>
          <span>{{data.attributes.intuition.value}}</span>
          <input type="hidden" data-dtype="Number" name="data.attributes.intuition.value" value="{{data.attributes.intuition.value}}" />
          <div class="field"><label>base:</label><input type="number" data-dtype="Number" name="data.attributes.intuition.base" value="{{data.attributes.intuition.base}}" placeholder="base" title="Base Intuition" min="{{data.attributes.intuition.min}}" max="{{data.attributes.intuition.max}}" /></div>
          <div class="field"><label>adj:</label><input type="number" data-dtype="Number" name="data.attributes.intuition.adj" value="{{data.attributes.intuition.adj}}" placeholder="±adj" title="Intuition Adjustment" /></div>
       </div>
-      <div class="attribute" augmented-ui="b-clip-x exe">
+      <div class="attribute" data-augmented-ui="b-clip-x exe">
          <p>Charisma</p>
          <span>{{data.attributes.charisma.value}}</span>
          <input type="hidden" data-dtype="Number" name="data.attributes.charisma.value" value="{{data.attributes.charisma.value}}" />
          <div class="field"><label>base:</label><input type="number" data-dtype="Number" name="data.attributes.charisma.base" value="{{data.attributes.charisma.base}}" placeholder="base" title="Base Charisma" min="{{data.attributes.charisma.min}}" max="{{data.attributes.charisma.max}}" /></div>
          <div class="field"><label>adj:</label><input type="number" data-dtype="Number" name="data.attributes.charisma.adj" value="{{data.attributes.charisma.adj}}" placeholder="±adj" title="Charisma Adjustment" /></div>
       </div>
-      <div class="attribute" augmented-ui="b-clip-x exe">
+      <div class="attribute" data-augmented-ui="b-clip-x exe">
          <p>Edge</p>
          <span>{{data.attributes.edge.value}}</span>
          <input type="hidden" data-dtype="Number" name="data.attributes.edge.value" value="{{data.attributes.edge.value}}" />
          <div class="field"><label>base:</label><input type="number" data-dtype="Number" name="data.attributes.edge.base" value="{{data.attributes.edge.base}}" placeholder="base" title="Base Edge" min="{{data.attributes.edge.min}}" max="{{data.attributes.edge.max}}" /></div>
          <div class="field"><label>adj:</label><input type="number" data-dtype="Number" name="data.attributes.edge.adj" value="{{data.attributes.edge.adj}}" placeholder="±adj" title="Edge Adjustment" /></div>
       </div>
-      <div class="attribute" augmented-ui="b-clip-x exe">
+      <div class="attribute" data-augmented-ui="b-clip-x exe">
          <p>Essence</p>
          <span>{{data.attributes.essence.value}}</span>
          <input type="hidden" data-dtype="Number" name="data.attributes.essence.value" value="{{data.attributes.essence.value}}" />
@@ -136,7 +136,7 @@
          <div class="field"><label>adj:</label><input type="number" data-dtype="Number" name="data.attributes.essence.adj" value="{{data.attributes.essence.adj}}" placeholder="±adj" title="Essence Adjustment" step=".1" /></div>
       </div>
       {{#if (isEqual data.nature 'awakened') }}
-      <div class="attribute" augmented-ui="b-clip-x exe">
+      <div class="attribute" data-augmented-ui="b-clip-x exe">
          <p>Magic</p>
          <span>{{data.attributes.magic.value}}</span>
          <input type="hidden" data-dtype="Number" name="data.attributes.magic.value" value="{{data.attributes.magic.value}}" />
@@ -145,7 +145,7 @@
       </div>
       {{/if}}
       {{#if (isEqual data.nature 'emerged') }}
-      <div class="attribute" augmented-ui="b-clip-x exe">
+      <div class="attribute" data-augmented-ui="b-clip-x exe">
          <p>Resonance</p>
          <span>{{data.attributes.resonance.value}}</span>
          <input type="hidden" data-dtype="Number" name="data.attributes.resonance.value" value="{{data.attributes.resonance.value}}" />
@@ -156,20 +156,20 @@
 
    </div>
    <nav class="sheet-tabs tabs" data-group="primary">
-      <a class="item" data-tab="overview" augmented-ui="tl-clip br-clip exe">OVERVIEW</a>
-      <a class="item" data-tab="skills" augmented-ui="tl-clip br-clip exe">SKILLS</a>
-      <a class="item" data-tab="combat" augmented-ui="tl-clip br-clip exe">COMBAT</a>
+      <a class="item" data-tab="overview" data-augmented-ui="border br-2-clip-x">OVERVIEW</a>
+      <a class="item" data-tab="skills" data-augmented-ui="tl-clip br-clip exe">SKILLS</a>
+      <a class="item" data-tab="combat" data-augmented-ui="tl-clip br-clip exe">COMBAT</a>
       {{#if (isEqual data.nature 'awakened') }}
-      <a class="item" data-tab="magic" augmented-ui="tl-clip br-clip exe">MAGIC</a>
+      <a class="item" data-tab="magic" data-augmented-ui="tl-clip br-clip exe">MAGIC</a>
       {{/if}}
       {{#if (isEqual data.nature 'emerged') }}
-      <a class="item" data-tab="technomancy" augmented-ui="tl-clip br-clip exe">TECHNOMANCY</a>
+      <a class="item" data-tab="technomancy" data-augmented-ui="tl-clip br-clip exe">TECHNOMANCY</a>
       {{/if}}
-      <a class="item" data-tab="qualities" augmented-ui="tl-clip br-clip exe">QUALITIES</a>
-      <a class="item" data-tab="augmentations" augmented-ui="tl-clip br-clip exe">AUGMENTS</a>
-      <a class="item" data-tab="gear" augmented-ui="tl-clip br-clip exe">GEAR</a>
-      <a class="item" data-tab="social" augmented-ui="tl-clip br-clip exe">SOCIAL</a>
-      <a class="item" data-tab="journal" augmented-ui="tl-clip br-clip exe">JOURNAL</a>
+      <a class="item" data-tab="qualities" data-augmented-ui="tl-clip br-clip exe">QUALITIES</a>
+      <a class="item" data-tab="augmentations" data-augmented-ui="tl-clip br-clip exe">AUGMENTS</a>
+      <a class="item" data-tab="gear" data-augmented-ui="tl-clip br-clip exe">GEAR</a>
+      <a class="item" data-tab="social" data-augmented-ui="tl-clip br-clip exe">SOCIAL</a>
+      <a class="item" data-tab="journal" data-augmented-ui="tl-clip br-clip exe">JOURNAL</a>
    </nav>
    <section class="sheet-body">
       <div class="tab overview" data-group="primary" data-tab="overview">
@@ -305,7 +305,7 @@
             <nav class="tabs">
                <a class="item" data-control="journal-entries" data-action="create" ugmented-ui="tr-clip bl-clip exe"><i class="fas fa-plus"></i></a>
                {{#each data.journal}}
-               <a class="item" :class="{ 'active': tab === '{{@key}}' }" @click="tab = '{{@key}}'" augmented-ui="tr-clip bl-clip exe">{{title}}</a>
+               <a class="item" :class="{ 'active': tab === '{{@key}}' }" @click="tab = '{{@key}}'" data-augmented-ui="tr-clip bl-clip exe">{{title}}</a>
                {{/each}}
             </nav>
             <section>

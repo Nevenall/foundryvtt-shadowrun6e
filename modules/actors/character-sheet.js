@@ -8,7 +8,7 @@ export class CharacterSheet extends ActorSheet {
    constructor(...args) {
       super(...args)
 
-      // track a list of things marked as deleted for the formudata method
+      // track a list of things marked as deleted for the formupdated method
       this.deleted = []
       // keep a hold of the calculated character data so we can resolve tests, hope chrome optimizes objects in memory
       this.calculated = {}
@@ -16,7 +16,7 @@ export class CharacterSheet extends ActorSheet {
 
    /** @override */
    static get defaultOptions() {
-      return mergeObject(super.defaultOptions, {
+      return foundry.utils.mergeObject(super.defaultOptions, {
          classes: ["shadowrun", "sheet", "actor"],
          template: "systems/shadowrun6e/templates/actors/character-sheet.html",
          width: 1000,
@@ -27,19 +27,22 @@ export class CharacterSheet extends ActorSheet {
 
 
    /** @override */
-   getData() {
-      const data = super.getData()
-      // console.log(`[get data]`, data)
-      var calculated = CalculateCharacterData(data)
-      this.calculated = calculated
-      return calculated
+   async getData(options) {
+      let data = this.actor.toObject(false)
+      this.calculated = CalculateCharacterData(data.system)
+
+      // swap in our calculated data for one of these values
+      let context = {
+         actor: data,
+         data: this.calculated
+      }
+
+      return context
    }
 
    /** @override */
    activateListeners(html) {
       super.activateListeners(html)
-
-
       // Everything below here is only needed if the sheet is editable
       if (!this.options.editable) return
 
@@ -230,48 +233,10 @@ export class CharacterSheet extends ActorSheet {
 
    }
 
-   /** @override */
-   setPosition(options = {}) {
-      const position = super.setPosition(options)
-      return position
-   }
 
-   /**
-    * Listen for click events on an attribute control to modify the composition of attributes in the sheet
-    * @param {MouseEvent} event    The originating left click event
-    * @private
-    */
-   async _onClickAttributeControl(event) {
-      event.preventDefault()
-      // const a = event.currentTarget
-      // const action = a.dataset.action
-      // const attrs = this.object.data.data.attributes
-      // const form = this.form
 
-      // // Add new attribute
-      // if (action === "create") {
-      //    const nk = Object.keys(attrs).length + 1
-      //    let newKey = document.createElement("div")
-      //    newKey.innerHTML = `< input type = "text" name = "data.attributes.attr${nk}.key" value = "attr${nk}" /> `
-      //    newKey = newKey.children[0]
-      //    form.appendChild(newKey)
-      //    await this._onSubmit(event)
-      // }
 
-      // // Remove existing attribute
-      // else if (action === "delete") {
-      //    const li = a.closest(".attribute")
-      //    li.parentElement.removeChild(li)
-      //    await this._onSubmit(event)
-      // }
-   }
 
-   /** @override */
-   async _render(force = false, options = {}) {
-      if (force) this.token = options.token || null;
-
-      return super._render(force, options);
-   }
 
    /** @override */
    _updateObject(event, formData) {

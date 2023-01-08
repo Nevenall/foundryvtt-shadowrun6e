@@ -1,36 +1,35 @@
 import gulp from 'gulp'
 let { parallel, series, src, dest, watch } = gulp
+
 import fs from 'fs'
 import path from 'path'
 import through from 'through2'
 import replace from 'gulp-replace'
 import sourcemaps from 'gulp-sourcemaps'
-let  { init, write }  = sourcemaps
-
+let { init, write } = sourcemaps
 import concat from "gulp-concat"
 import gulpif from 'gulp-if'
 import del from 'delete'
 import { dirname } from 'path'
 import Handlebars from 'handlebars'
-import sass from 'sass'
+
+import dartSass from 'sass'
 import gulpSass from 'gulp-sass'
+let sass = gulpSass(dartSass)
+
 import browserSync from 'browser-sync'
-
 let devServer = browserSync.create()
-
 
 function clean(done) {
    // clean up the dist directory before we start building
    del('dist/**', done)
 }
 
-
 function scss() {
    return src('scss/main.scss')
-      .pipe(gulpSass().on('error', gulpSass.logError))
+      .pipe(sass().on('error', sass.logError))
       .pipe(dest('css/'))
 }
-
 
 function develop(done) {
    // devServer.init({
@@ -47,7 +46,6 @@ function develop(done) {
    // watch(['testing/index.html', 'testing/data.json', 'templates/**'], content)
    // watch('testing/style.css', styles)
    watch('scss/**', scss)
-
    done()
 }
 

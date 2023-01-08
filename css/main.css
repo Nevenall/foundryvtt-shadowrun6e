@@ -4,313 +4,385 @@
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src: url("../fonts/friz-quadrata-std-bold-italic.woff2") format("woff2"); }
-
+  src: url("../fonts/friz-quadrata-std-bold-italic.woff2") format("woff2");
+}
 @font-face {
   font-family: "Friz Quadrata";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("../fonts/friz-quadrata-std-bold.woff2") format("woff2"); }
-
+  src: url("../fonts/friz-quadrata-std-bold.woff2") format("woff2");
+}
 @font-face {
   font-family: "Friz Quadrata";
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url("../fonts/friz-quadrata-std-italic.woff2") format("woff2"); }
-
+  src: url("../fonts/friz-quadrata-std-italic.woff2") format("woff2");
+}
 @font-face {
   font-family: "Friz Quadrata";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../fonts/friz-quadrata-std-medium.woff2") format("woff2"); }
-
+  src: url("../fonts/friz-quadrata-std-medium.woff2") format("woff2");
+}
 .shadowrun form.character {
   font-family: "Friz Quadrata", sans-serif;
-  font-size: 16px; }
-  .shadowrun form.character select {
-    background-color: inherit;
-    font-family: inherit;
-    font-size: inherit; }
-  .shadowrun form.character option {
-    background-color: inherit;
-    font-family: inherit;
-    font-size: inherit; }
-  .shadowrun form.character input {
-    background-color: inherit;
-    font-family: inherit;
-    font-size: inherit; }
-  .shadowrun form.character input[type=number] {
-    -moz-appearance: textfield;
-    width: 2rem;
-    text-align: center; }
-  .shadowrun form.character input[type=number]::-webkit-inner-spin-button,
-  .shadowrun form.character input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0; }
-  .shadowrun form.character input::placeholder {
-    background-color: inherit;
-    font-style: italic;
-    opacity: .5; }
-  .shadowrun form.character header {
-    display: grid;
-    grid-template-columns: 10rem 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: "image name" "image nature" "image vitals"; }
-    .shadowrun form.character header img {
-      grid-area: image;
-      height: 10rem;
-      object-fit: cover;
-      border: none;
-      margin-right: .5rem; }
-    .shadowrun form.character header .field {
-      display: flex;
-      flex-flow: column nowrap;
-      flex-grow: 1;
-      margin-right: .5rem; }
-    .shadowrun form.character header .field:last-child {
-      margin-right: 0; }
-    .shadowrun form.character header .name {
-      grid-area: name; }
-    .shadowrun form.character header .nature {
-      grid-area: nature; }
-    .shadowrun form.character header .vitals {
-      grid-area: vitals; }
-    .shadowrun form.character header .row {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-between;
-      align-items: center; }
-    .shadowrun form.character header label {
-      font-size: .75em; }
-  .shadowrun form.character .attributes {
-    height: 5.25rem;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: stretch;
-    margin-top: 1rem; }
-    .shadowrun form.character .attributes .attribute {
-      min-width: 5.25rem;
-      text-align: center;
-      padding: .25rem;
-      display: flex;
-      flex-flow: column nowrap;
-      justify-items: flex-start;
-      --aug-border: 1px;
-      --aug-inset: 2px;
-      --aug-border-bg: rgb(82, 81, 78);
-      --aug-inset-bg: rgba(255, 255, 255, 0);
-      --aug-b-width: 33%;
-      --aug-b-height: 10px;
-      position: relative; }
-      .shadowrun form.character .attributes .attribute p {
-        text-align: center;
-        margin: 0; }
-      .shadowrun form.character .attributes .attribute span {
-        font-size: 1.125rem;
-        margin-top: .25rem; }
-      .shadowrun form.character .attributes .attribute .field {
-        display: flex;
-        flex-flow: column nowrap; }
-      .shadowrun form.character .attributes .attribute input::placeholder,
-      .shadowrun form.character .attributes .attribute label {
-        font-size: .75rem; }
-      .shadowrun form.character .attributes .attribute .field:nth-of-type(1) {
-        font-size: .89rem;
-        position: absolute;
-        bottom: 0;
-        left: 0; }
-      .shadowrun form.character .attributes .attribute .field:nth-of-type(2) {
-        font-size: .89rem;
-        position: absolute;
-        bottom: 0;
-        right: 0; }
-  .shadowrun form.character nav {
-    margin-top: 1rem; }
-    .shadowrun form.character nav a {
-      --aug-border: 1px;
-      --aug-inset: 2px;
-      --aug-border-bg: rgb(82, 81, 78);
-      --aug-inset-bg: rgba(255, 255, 255, 0);
-      padding: .25rem;
-      text-align: center;
-      margin-right: .25rem; }
-    .shadowrun form.character nav a:last-child {
-      margin-right: 0; }
-  .shadowrun form.character .sheet nav.sheet-tabs {
-    /* height: 32px; */
-    /* flex: 0 0 32px; */
-    /* margin: 4px 0; */
-    /* line-height: 32px; */
-    /* border-top: 1px solid #b5b3a4; */
-    /* border-bottom: 1px solid #b5b3a4; */ }
-  .shadowrun form.character nav.sheet-tabs.tabs {
-    border: none;
-    line-height: initial;
-    height: auto; }
-  .shadowrun form.character section .overview-content {
-    font-size: .89rem;
-    display: flex;
-    flex-flow: row nowrap; }
-    .shadowrun form.character section .overview-content .tests {
-      flex-basis: 50%; }
-      .shadowrun form.character section .overview-content .tests table tbody tr {
-        transition: all .2s ease-in-out; }
-      .shadowrun form.character section .overview-content .tests table tbody tr:hover {
-        color: white;
-        background: rgba(0, 0, 0, 0.5);
-        text-shadow: 1px 1px #000; }
-      .shadowrun form.character section .overview-content .tests table th:nth-of-type(1),
-      .shadowrun form.character section .overview-content .tests table td:nth-of-type(1) {
-        text-align: left;
-        padding-left: .25rem; }
-      .shadowrun form.character section .overview-content .tests table th:nth-of-type(2),
-      .shadowrun form.character section .overview-content .tests table td:nth-of-type(2) {
-        text-align: left; }
-      .shadowrun form.character section .overview-content .tests table th:nth-of-type(3),
-      .shadowrun form.character section .overview-content .tests table td:nth-of-type(3) {
-        text-align: center; }
-  .shadowrun form.character section .skills-content {
-    display: flex;
-    flex-flow: row nowrap;
-    font-size: .89rem; }
-    .shadowrun form.character section .skills-content .active-skills {
-      flex-basis: 60%; }
-    .shadowrun form.character section .skills-content .knowledge-skills {
-      flex-basis: 40%;
-      margin: .5rem 0 .5rem .5rem; }
-      .shadowrun form.character section .skills-content .knowledge-skills > div {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-        background: rgba(0, 0, 0, 0.5);
-        padding: .25rem .25rem .25rem .25rem; }
-        .shadowrun form.character section .skills-content .knowledge-skills > div span,
-        .shadowrun form.character section .skills-content .knowledge-skills > div a {
-          color: #f0f0e0;
-          text-shadow: 1px 1px #000;
-          box-sizing: border-box;
-          user-select: none;
-          font-weight: bold; }
-        .shadowrun form.character section .skills-content .knowledge-skills > div a:hover {
-          text-shadow: 0 0 8px red; }
-      .shadowrun form.character section .skills-content .knowledge-skills ol {
-        list-style: none;
-        padding: 0; }
-      .shadowrun form.character section .skills-content .knowledge-skills li {
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center; }
-        .shadowrun form.character section .skills-content .knowledge-skills li a {
-          margin-left: .5rem; }
-    .shadowrun form.character section .skills-content table th:nth-of-type(1),
-    .shadowrun form.character section .skills-content table td:nth-of-type(1) {
-      text-align: left;
-      padding-left: .25rem; }
-    .shadowrun form.character section .skills-content table th:nth-of-type(2),
-    .shadowrun form.character section .skills-content table td:nth-of-type(2) {
-      text-align: center; }
-    .shadowrun form.character section .skills-content table th:nth-of-type(3),
-    .shadowrun form.character section .skills-content table td:nth-of-type(3) {
-      text-align: center; }
-    .shadowrun form.character section .skills-content table th:nth-of-type(4),
-    .shadowrun form.character section .skills-content table td:nth-of-type(4) {
-      text-align: center; }
-    .shadowrun form.character section .skills-content table th:nth-of-type(5),
-    .shadowrun form.character section .skills-content table td:nth-of-type(5) {
-      padding-left: .25rem;
-      text-align: left; }
-    .shadowrun form.character section .skills-content table th:nth-of-type(6),
-    .shadowrun form.character section .skills-content table td:nth-of-type(6) {
-      padding-left: .25rem;
-      text-align: left; }
-  .shadowrun form.character section .journal-content {
-    margin: .5rem 0 .5rem 0;
-    display: flex;
-    flex-flow: row nowrap; }
-    .shadowrun form.character section .journal-content > section {
-      width: 100%; }
-    .shadowrun form.character section .journal-content .tabs {
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: flex-start;
-      align-items: flex-start;
-      margin-top: 0;
-      margin-right: .5rem;
-      width: 25ch; }
-      .shadowrun form.character section .journal-content .tabs a {
-        flex-grow: 0;
-        width: 100%; }
-    .shadowrun form.character section .journal-content .summary {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-between; }
-      .shadowrun form.character section .journal-content .summary input {
-        margin-right: .5rem; }
-
+  font-size: 16px;
+}
+.shadowrun form.character select {
+  background-color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+.shadowrun form.character option {
+  background-color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+.shadowrun form.character input {
+  background-color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+.shadowrun form.character input[type=number] {
+  -moz-appearance: textfield;
+  width: 2rem;
+  text-align: center;
+}
+.shadowrun form.character input[type=number]::-webkit-inner-spin-button,
+.shadowrun form.character input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.shadowrun form.character input::placeholder {
+  background-color: inherit;
+  font-style: italic;
+  opacity: 0.5;
+}
+.shadowrun form.character header {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "image name" "image nature" "image vitals";
+}
+.shadowrun form.character header img {
+  grid-area: image;
+  height: 10rem;
+  object-fit: cover;
+  border: none;
+  margin-right: 0.5rem;
+}
+.shadowrun form.character header .field {
+  display: flex;
+  flex-flow: column nowrap;
+  flex-grow: 1;
+  margin-right: 0.5rem;
+}
+.shadowrun form.character header .field:last-child {
+  margin-right: 0;
+}
+.shadowrun form.character header .name {
+  grid-area: name;
+}
+.shadowrun form.character header .nature {
+  grid-area: nature;
+}
+.shadowrun form.character header .vitals {
+  grid-area: vitals;
+}
+.shadowrun form.character header .row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.shadowrun form.character header label {
+  font-size: 0.75em;
+}
+.shadowrun form.character .attributes {
+  height: 5.25rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-top: 1rem;
+}
+.shadowrun form.character .attributes .attribute {
+  min-width: 5.25rem;
+  text-align: center;
+  padding: 0.25rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-items: flex-start;
+  --aug-border: 1px;
+  --aug-inset: 2px;
+  --aug-border-bg: rgb(82, 81, 78);
+  --aug-inset-bg: rgba(255, 255, 255, 0);
+  --aug-b-width: 33%;
+  --aug-b-height: 10px;
+  position: relative;
+}
+.shadowrun form.character .attributes .attribute p {
+  text-align: center;
+  margin: 0;
+}
+.shadowrun form.character .attributes .attribute span {
+  font-size: 1.125rem;
+  margin-top: 0.25rem;
+}
+.shadowrun form.character .attributes .attribute .field {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.shadowrun form.character .attributes .attribute input::placeholder,
+.shadowrun form.character .attributes .attribute label {
+  font-size: 0.75rem;
+}
+.shadowrun form.character .attributes .attribute .field:nth-of-type(1) {
+  font-size: 0.89rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.shadowrun form.character .attributes .attribute .field:nth-of-type(2) {
+  font-size: 0.89rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.shadowrun form.character nav {
+  margin-top: 1rem;
+}
+.shadowrun form.character nav a {
+  --aug-border: 1px;
+  --aug-inset: 2px;
+  --aug-border-bg: rgb(82, 81, 78);
+  --aug-inset-bg: rgba(255, 255, 255, 0);
+  padding: 0.25rem;
+  text-align: center;
+  margin-right: 0.25rem;
+}
+.shadowrun form.character nav a:last-child {
+  margin-right: 0;
+}
+.shadowrun form.character .sheet nav.sheet-tabs {
+  /* height: 32px; */
+  /* flex: 0 0 32px; */
+  /* margin: 4px 0; */
+  /* line-height: 32px; */
+  /* border-top: 1px solid #b5b3a4; */
+  /* border-bottom: 1px solid #b5b3a4; */
+}
+.shadowrun form.character nav.sheet-tabs.tabs {
+  border: none;
+  line-height: initial;
+  height: auto;
+}
+.shadowrun form.character section .overview-content {
+  font-size: 0.89rem;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.shadowrun form.character section .overview-content .tests {
+  flex-basis: 50%;
+}
+.shadowrun form.character section .overview-content .tests table tbody tr {
+  transition: all 0.2s ease-in-out;
+}
+.shadowrun form.character section .overview-content .tests table tbody tr:hover {
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px #000;
+}
+.shadowrun form.character section .overview-content .tests table th:nth-of-type(1),
+.shadowrun form.character section .overview-content .tests table td:nth-of-type(1) {
+  text-align: left;
+  padding-left: 0.25rem;
+}
+.shadowrun form.character section .overview-content .tests table th:nth-of-type(2),
+.shadowrun form.character section .overview-content .tests table td:nth-of-type(2) {
+  text-align: left;
+}
+.shadowrun form.character section .overview-content .tests table th:nth-of-type(3),
+.shadowrun form.character section .overview-content .tests table td:nth-of-type(3) {
+  text-align: center;
+}
+.shadowrun form.character section .skills-content {
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 0.89rem;
+}
+.shadowrun form.character section .skills-content .active-skills {
+  flex-basis: 60%;
+}
+.shadowrun form.character section .skills-content .knowledge-skills {
+  flex-basis: 40%;
+  margin: 0.5rem 0 0.5rem 0.5rem;
+}
+.shadowrun form.character section .skills-content .knowledge-skills > div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.25rem 0.25rem 0.25rem 0.25rem;
+}
+.shadowrun form.character section .skills-content .knowledge-skills > div span,
+.shadowrun form.character section .skills-content .knowledge-skills > div a {
+  color: #f0f0e0;
+  text-shadow: 1px 1px #000;
+  box-sizing: border-box;
+  user-select: none;
+  font-weight: bold;
+}
+.shadowrun form.character section .skills-content .knowledge-skills > div a:hover {
+  text-shadow: 0 0 8px red;
+}
+.shadowrun form.character section .skills-content .knowledge-skills ol {
+  list-style: none;
+  padding: 0;
+}
+.shadowrun form.character section .skills-content .knowledge-skills li {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.shadowrun form.character section .skills-content .knowledge-skills li a {
+  margin-left: 0.5rem;
+}
+.shadowrun form.character section .skills-content table th:nth-of-type(1),
+.shadowrun form.character section .skills-content table td:nth-of-type(1) {
+  text-align: left;
+  padding-left: 0.25rem;
+}
+.shadowrun form.character section .skills-content table th:nth-of-type(2),
+.shadowrun form.character section .skills-content table td:nth-of-type(2) {
+  text-align: center;
+}
+.shadowrun form.character section .skills-content table th:nth-of-type(3),
+.shadowrun form.character section .skills-content table td:nth-of-type(3) {
+  text-align: center;
+}
+.shadowrun form.character section .skills-content table th:nth-of-type(4),
+.shadowrun form.character section .skills-content table td:nth-of-type(4) {
+  text-align: center;
+}
+.shadowrun form.character section .skills-content table th:nth-of-type(5),
+.shadowrun form.character section .skills-content table td:nth-of-type(5) {
+  padding-left: 0.25rem;
+  text-align: left;
+}
+.shadowrun form.character section .skills-content table th:nth-of-type(6),
+.shadowrun form.character section .skills-content table td:nth-of-type(6) {
+  padding-left: 0.25rem;
+  text-align: left;
+}
+.shadowrun form.character section .journal-content {
+  margin: 0.5rem 0 0.5rem 0;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.shadowrun form.character section .journal-content > section {
+  width: 100%;
+}
+.shadowrun form.character section .journal-content .tabs {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 0;
+  margin-right: 0.5rem;
+  width: 25ch;
+}
+.shadowrun form.character section .journal-content .tabs a {
+  flex-grow: 0;
+  width: 100%;
+}
+.shadowrun form.character section .journal-content .summary {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.shadowrun form.character section .journal-content .summary input {
+  margin-right: 0.5rem;
+}
 .shadowrun .window-content {
-  height: 100%; }
-
+  height: 100%;
+}
 .shadowrun .tab.active {
-  height: 100%; }
+  height: 100%;
+}
 
 .shadowrun.sheet.actor {
   min-width: 560px;
-  min-height: 420px; }
+  min-height: 420px;
+}
 
 .shadowrun.sheet.quality form {
   display: flex;
-  flex-flow: column nowrap; }
-  .shadowrun.sheet.quality form > div {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
-    align-items: center; }
-    .shadowrun.sheet.quality form > div img {
-      height: 5rem; }
-    .shadowrun.sheet.quality form > div input[type=number] {
-      height: 5rem;
-      width: 5rem; }
-  .shadowrun.sheet.quality form textarea {
-    height: 100%; }
+  flex-flow: column nowrap;
+}
+.shadowrun.sheet.quality form > div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.shadowrun.sheet.quality form > div img {
+  height: 5rem;
+}
+.shadowrun.sheet.quality form > div input[type=number] {
+  height: 5rem;
+  width: 5rem;
+}
+.shadowrun.sheet.quality form textarea {
+  height: 100%;
+}
 
 form.test-options {
   font-family: "Friz Quadrata", sans-serif;
-  font-size: 16px; }
-  form.test-options select {
-    background-color: inherit;
-    font-family: inherit;
-    font-size: inherit; }
-  form.test-options option {
-    background-color: inherit;
-    font-family: inherit;
-    font-size: inherit; }
-  form.test-options input {
-    background-color: inherit;
-    font-family: inherit;
-    font-size: inherit; }
-  form.test-options input[type=number] {
-    -moz-appearance: textfield;
-    width: 2rem;
-    text-align: center; }
-  form.test-options input[type=number]::-webkit-inner-spin-button,
-  form.test-options input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0; }
-  form.test-options input::placeholder {
-    background-color: inherit;
-    font-style: italic;
-    opacity: .5; }
-  form.test-options .field {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    flex-grow: 1;
-    margin-right: .5rem; }
-  form.test-options label {
-    margin-right: .25rem;
-    flex-basis: 50%; }
+  font-size: 16px;
+}
+form.test-options select {
+  background-color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+form.test-options option {
+  background-color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+form.test-options input {
+  background-color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+form.test-options input[type=number] {
+  -moz-appearance: textfield;
+  width: 2rem;
+  text-align: center;
+}
+form.test-options input[type=number]::-webkit-inner-spin-button,
+form.test-options input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+form.test-options input::placeholder {
+  background-color: inherit;
+  font-style: italic;
+  opacity: 0.5;
+}
+form.test-options .field {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  flex-grow: 1;
+  margin-right: 0.5rem;
+}
+form.test-options label {
+  margin-right: 0.25rem;
+  flex-basis: 50%;
+}

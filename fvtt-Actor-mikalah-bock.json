@@ -1,0 +1,476 @@
+{
+  "name": "Mikalah Bock",
+  "type": "character",
+  "flags": {
+    "gm-notes": {},
+    "exportSource": {
+      "world": "shadowrun-redmond-vets",
+      "system": "shadowrun6e",
+      "coreVersion": "10.288",
+      "systemVersion": "0.0.31"
+    }
+  },
+  "img": "worlds/shadowrun-redmond-vets/Veil.png",
+  "items": [],
+  "effects": [],
+  "system": {
+    "alias": "Veil",
+    "nature": "awakened",
+    "metatype": "ork",
+    "ethnicity": "African American",
+    "gender": "female",
+    "age": "26",
+    "height": "6ft",
+    "weight": "190lb",
+    "attributes": {
+      "body": {
+        "base": 3,
+        "value": 7,
+        "adj": 4,
+        "min": 1,
+        "max": 6,
+        "current": 1
+      },
+      "agility": {
+        "base": 2,
+        "value": 2,
+        "adj": 0,
+        "min": 1,
+        "max": 6,
+        "current": 1
+      },
+      "reaction": {
+        "base": 2,
+        "value": 6,
+        "adj": 4,
+        "min": 1,
+        "max": 6,
+        "current": 1
+      },
+      "strength": {
+        "base": 2,
+        "value": 2,
+        "adj": 0,
+        "min": 1,
+        "max": 6,
+        "current": 1
+      },
+      "willpower": {
+        "base": 6,
+        "value": 6,
+        "adj": 0,
+        "min": 1,
+        "max": 6,
+        "current": 1
+      },
+      "logic": {
+        "base": 5,
+        "value": 5,
+        "adj": 0,
+        "min": 1,
+        "max": 6,
+        "current": 1
+      },
+      "intuition": {
+        "base": 4,
+        "value": 4,
+        "adj": 0,
+        "min": 1,
+        "max": 6,
+        "current": 1
+      },
+      "charisma": {
+        "base": 2,
+        "value": 2,
+        "adj": 0,
+        "min": 1,
+        "max": 6,
+        "current": 1
+      },
+      "edge": {
+        "base": 4,
+        "value": 4,
+        "adj": 0,
+        "min": 1,
+        "max": 6,
+        "current": 1
+      },
+      "essence": {
+        "base": 6,
+        "value": 6,
+        "adj": 0,
+        "min": 0.1,
+        "max": 6,
+        "current": 6
+      },
+      "magic": {
+        "base": 6,
+        "value": 10,
+        "adj": 4,
+        "min": 0,
+        "max": 6,
+        "current": 0
+      },
+      "resonance": {
+        "base": 0,
+        "value": 0,
+        "adj": 0,
+        "min": 0,
+        "max": 6,
+        "current": 0
+      }
+    },
+    "condition": {
+      "damage": {
+        "adj": 1,
+        "value": 0,
+        "max": 13
+      },
+      "overflow": {
+        "adj": 0,
+        "value": 0,
+        "max": 0
+      },
+      "stun": {
+        "adj": 0,
+        "value": 9,
+        "max": 11
+      }
+    },
+    "initiative": {
+      "physical": {
+        "dice": 4
+      },
+      "astral": {
+        "dice": 2
+      },
+      "matrixar": {
+        "dice": 1
+      },
+      "matrixvrcold": {
+        "dice": 2
+      },
+      "matrixvrhot": {
+        "dice": 3
+      }
+    },
+    "journal": {
+      "0": {
+        "title": "Your First Journal Entry",
+        "value": "# Header One\nUse these journals to record whatever you wish associated with your character."
+      },
+      "1": {
+        "title": "Osh-Jisch - \"Finds them and Kills Them\",journal entry 1",
+        "value": "## Wise Warrior Totem\nToken: A White Weasel tattoo on my forearm\n\n### Advantages \nAll: Edge Boosts cost 1 less for Influence tests \nMagician: Edge Boosts cost 1 less for spells, preparations, and spell rituals in the Combat category\n\n### Disadvantages\nIf you act dishonorably or without courtesy, whether by choice or by accident, you take a –1 dice pool modifier to all actions until you atone for your behavior."
+      }
+    },
+    "magic": {
+      "traditionAttribute": "logic"
+    },
+    "overview": {
+      "tests": {}
+    },
+    "skills": {
+      "active": {
+        "astral": {
+          "untrained": false,
+          "primaryAttribute": "intuition",
+          "rank": 3,
+          "pool": 0,
+          "max": 9,
+          "specialization": "Assenssing",
+          "expertise": "",
+          "name": "Astral"
+        },
+        "athletics": {
+          "untrained": true,
+          "primaryAttribute": "agility",
+          "rank": 2,
+          "pool": 0,
+          "max": 9,
+          "specialization": "",
+          "expertise": "",
+          "name": "Athletics"
+        },
+        "biotech": {
+          "untrained": false,
+          "primaryAttribute": "logic",
+          "rank": 0,
+          "pool": 0,
+          "max": 9,
+          "specialization": "",
+          "expertise": "",
+          "name": "Biotech"
+        },
+        "closecombat": {
+          "untrained": true,
+          "primaryAttribute": "agility",
+          "rank": 0,
+          "pool": 0,
+          "max": 9,
+          "specialization": "",
+          "expertise": "",
+          "name": "Close Combat"
+        },
+        "con": {
+          "untrained": true,
+          "primaryAttribute": "charisma",
+          "rank": 0,
+          "pool": 0,
+          "max": 9,
+          "specialization": "",
+          "expertise": "",
+          "name": "Con"
+        },
+        "conjuring": {
+          "untrained": false,
+          "primaryAttribute": "magic",
+          "rank": 4,
+          "pool": 0,
+          "max": 9,
+          "specialization": "Summoning",
+          "expertise": "",
+          "name": "Conjuring"
+        },
+        "cracking": {
+          "untrained": false,
+          "primaryAttribute": "logic",
+          "rank": 0,
+          "pool": 0,
+          "max": 9,
+          "specialization": "",
+          "expertise": "",
+          "name": "Cracking"
+        },
+        "electronics": {
+          "untrained": true,
+          "primaryAttribute": "logic",
+          "rank": 0,
+          "pool": 0,
+          "max": 9,
+          "specialization": "",
+          "expertise": "",
+          "name": "Electronics"
+        },
+        "enchanting": {
+          "untrained": false,
+          "primaryAttribute": "magic",
+          "rank": 2,
+          "pool": 0,
+          "max": 9,
+          "specialization": "",
+          "expertise": "",
+          "name": "Enchanting"
+        },
+        "engineering": {
+          "untrained": true,
+          "primaryAttribute": "logic",
+          "rank": 0,
+          "pool": 0,
+          "max": 9,
+          "specialization": "",
+          "expertise": "",
+          "name": "Engineering"
+        },
+        "exoticweapons": {
+          "untrained": false,
+          "primaryAttribute": "agility",
+          "rank": 0,
+          "pool": 0,
+          "max": 9,
+          "specialization": "",
+          "expertise": "",
+          "name": "Exotic Weapons"
+        },
+        "firearms": {
+          "untrained": true,
+          "primaryAttribute": "agility",
+          "rank": 1,
+          "pool": 0,
+          "max": 9,
+          "specialization": "Automatics",
+          "expertise": "",
+          "name": "Firearms"
+        },
+        "influence": {
+          "untrained": true,
+          "primaryAttribute": "charisma",
+          "rank": 0,
+          "pool": 0,
+          "max": 9,
+          "specialization": "",
+          "expertise": "",
+          "name": "Influence"
+        },
+        "outdoors": {
+          "untrained": true,
+          "primaryAttribute": "intuition",
+          "rank": 0,
+          "pool": 0,
+          "max": 9,
+          "specialization": "",
+          "expertise": "",
+          "name": "Outdoors"
+        },
+        "perception": {
+          "untrained": true,
+          "primaryAttribute": "intuition",
+          "rank": 0,
+          "pool": 0,
+          "max": 9,
+          "specialization": "",
+          "expertise": "",
+          "name": "Perception"
+        },
+        "piloting": {
+          "untrained": true,
+          "primaryAttribute": "reaction",
+          "rank": 0,
+          "pool": 0,
+          "max": 9,
+          "specialization": "",
+          "expertise": "",
+          "name": "Piloting"
+        },
+        "sorcery": {
+          "untrained": false,
+          "primaryAttribute": "magic",
+          "rank": 6,
+          "pool": 0,
+          "max": 9,
+          "specialization": "Spellcasting",
+          "expertise": "",
+          "name": "Sorcery"
+        },
+        "stealth": {
+          "untrained": true,
+          "primaryAttribute": "agility",
+          "rank": 2,
+          "pool": 0,
+          "max": 9,
+          "specialization": "Sneaking",
+          "expertise": "",
+          "name": "Stealth"
+        },
+        "tasking": {
+          "untrained": false,
+          "primaryAttribute": "resonance",
+          "rank": 0,
+          "pool": 0,
+          "max": 9,
+          "specialization": "",
+          "expertise": "",
+          "name": "Tasking"
+        }
+      },
+      "knowledge": {
+        "0": {
+          "name": "Cityspeak (Native)"
+        },
+        "1": {
+          "name": "Magic Theory"
+        },
+        "2": {
+          "name": "Or'Zet (Specialist)"
+        },
+        "3": {
+          "name": "Security Procedures"
+        },
+        "4": {
+          "name": "Sprawl Life"
+        }
+      }
+    },
+    "status": {
+      "damagePenalty": 0,
+      "stunPenalty": 0
+    }
+  },
+  "prototypeToken": {
+    "flags": {
+      "token-auras": {
+        "aura1": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        },
+        "aura2": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        }
+      }
+    },
+    "name": "Veil",
+    "displayName": 30,
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "actorLink": true,
+    "disposition": 1,
+    "displayBars": 50,
+    "bar1": {
+      "attribute": "condition.damage"
+    },
+    "bar2": {
+      "attribute": "condition.stun"
+    },
+    "randomImg": false,
+    "light": {
+      "dim": 0,
+      "bright": 0,
+      "angle": 360,
+      "color": null,
+      "alpha": 1,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "coloration": 1,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "texture": {
+      "src": "worlds/shadowrun-redmond-vets/veil-token.png",
+      "tint": null,
+      "scaleX": 0.9,
+      "scaleY": 0.9,
+      "offsetX": 0,
+      "offsetY": 0,
+      "rotation": 0
+    },
+    "sight": {
+      "angle": 360,
+      "enabled": false,
+      "range": 50,
+      "brightness": 1,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "alpha": 1,
+    "detectionModes": []
+  },
+  "_stats": {
+    "systemId": null,
+    "systemVersion": null,
+    "coreVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  }
+}

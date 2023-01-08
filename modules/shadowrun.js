@@ -140,51 +140,51 @@ let names = {
    "initiativematrixvrhot": { "abbreviation": "Initiative Matrix VR Hot", "display": "Initiative–Matrix VR Hot" },
 }
 
-let calculateCharacterData = function (character) {
+let calculateCharacterData = function (data) {
    // console.log('[shadowrun]', character)
 
    // determine current values for attributes
-   character.data.attributes.body.value = character.data.attributes.body.base + character.data.attributes.body.adj
-   character.data.attributes.agility.value = character.data.attributes.agility.base + character.data.attributes.agility.adj
-   character.data.attributes.reaction.value = character.data.attributes.reaction.base + character.data.attributes.reaction.adj
-   character.data.attributes.strength.value = character.data.attributes.strength.base + character.data.attributes.strength.adj
-   character.data.attributes.willpower.value = character.data.attributes.willpower.base + character.data.attributes.willpower.adj
-   character.data.attributes.logic.value = character.data.attributes.logic.base + character.data.attributes.logic.adj
-   character.data.attributes.intuition.value = character.data.attributes.intuition.base + character.data.attributes.intuition.adj
-   character.data.attributes.charisma.value = character.data.attributes.charisma.base + character.data.attributes.charisma.adj
-   character.data.attributes.edge.value = character.data.attributes.edge.base + character.data.attributes.edge.adj
-   character.data.attributes.essence.value = character.data.attributes.essence.base + character.data.attributes.essence.adj
+   data.attributes.body.value = data.attributes.body.base + data.attributes.body.adj
+   data.attributes.agility.value = data.attributes.agility.base + data.attributes.agility.adj
+   data.attributes.reaction.value = data.attributes.reaction.base + data.attributes.reaction.adj
+   data.attributes.strength.value = data.attributes.strength.base + data.attributes.strength.adj
+   data.attributes.willpower.value = data.attributes.willpower.base + data.attributes.willpower.adj
+   data.attributes.logic.value = data.attributes.logic.base + data.attributes.logic.adj
+   data.attributes.intuition.value = data.attributes.intuition.base + data.attributes.intuition.adj
+   data.attributes.charisma.value = data.attributes.charisma.base + data.attributes.charisma.adj
+   data.attributes.edge.value = data.attributes.edge.base + data.attributes.edge.adj
+   data.attributes.essence.value = data.attributes.essence.base + data.attributes.essence.adj
 
    // magic and resonance reduced by 1 for every full point of essence loss
-   let essenceLoss = 6 - Math.ceil(character.data.attributes.essence.value)
+   let essenceLoss = 6 - Math.ceil(data.attributes.essence.value)
 
-   character.data.attributes.magic.value = character.data.attributes.magic.base + character.data.attributes.magic.adj - essenceLoss
-   character.data.attributes.resonance.value = character.data.attributes.resonance.base + character.data.attributes.resonance.adj - essenceLoss
+   data.attributes.magic.value = data.attributes.magic.base + data.attributes.magic.adj - essenceLoss
+   data.attributes.resonance.value = data.attributes.resonance.base + data.attributes.resonance.adj - essenceLoss
 
    // set maximums based on metatype
-   let meta = metatypes[character.data.metatype]
-   character.data.attributes.body.max = meta.attributes.body.max
-   character.data.attributes.agility.max = meta.attributes.agility.max
-   character.data.attributes.reaction.max = meta.attributes.reaction.max
-   character.data.attributes.strength.max = meta.attributes.strength.max
-   character.data.attributes.willpower.max = meta.attributes.willpower.max
-   character.data.attributes.logic.max = meta.attributes.logic.max
-   character.data.attributes.intuition.max = meta.attributes.intuition.max
-   character.data.attributes.charisma.max = meta.attributes.charisma.max
-   character.data.attributes.edge.max = meta.attributes.edge.max
+   let meta = metatypes[data.metatype]
+   data.attributes.body.max = meta.attributes.body.max
+   data.attributes.agility.max = meta.attributes.agility.max
+   data.attributes.reaction.max = meta.attributes.reaction.max
+   data.attributes.strength.max = meta.attributes.strength.max
+   data.attributes.willpower.max = meta.attributes.willpower.max
+   data.attributes.logic.max = meta.attributes.logic.max
+   data.attributes.intuition.max = meta.attributes.intuition.max
+   data.attributes.charisma.max = meta.attributes.charisma.max
+   data.attributes.edge.max = meta.attributes.edge.max
 
 
    // condition and status, do these early so they can be used in other calculations, slightly irrelavent now that test pool is a function
-   character.data.condition.damage.max = 8 + Math.ceil(character.data.attributes.body.value / 2) + character.data.condition.damage.adj
-   character.data.status.damagePenalty = Math.floor(character.data.condition.damage.value / 3) * -1
-   character.data.condition.stun.max = 8 + Math.ceil(character.data.attributes.willpower.value / 2) + character.data.condition.stun.adj
-   character.data.status.stunPenalty = Math.floor(character.data.condition.stun.value / 3) * -1
-   character.data.condition.overflow.max = character.data.attributes.body.value * 2 + character.data.condition.overflow.adj
+   data.condition.damage.max = 8 + Math.ceil(data.attributes.body.value / 2) + data.condition.damage.adj
+   data.status.damagePenalty = Math.floor(data.condition.damage.value / 3) * -1
+   data.condition.stun.max = 8 + Math.ceil(data.attributes.willpower.value / 2) + data.condition.stun.adj
+   data.status.stunPenalty = Math.floor(data.condition.stun.value / 3) * -1
+   data.condition.overflow.max = data.attributes.body.value * 2 + data.condition.overflow.adj
 
-   character.data.status.penalty = function () { return character.data.status.stunPenalty + character.data.status.damagePenalty }
-   character.data.status.toHtml = function () {
-      if (character.data.status.penalty()) {
-         return `<span title="${(character.data.status.stunPenalty ? 'stun: ' + character.data.status.stunPenalty + '\n' : '') + (character.data.status.damagePenalty ? 'damage: ' + character.data.status.damagePenalty + '\n' : '')}"> + Status (${character.data.status.penalty()})</span>`
+   data.status.penalty = function () { return data.status.stunPenalty + data.status.damagePenalty }
+   data.status.toHtml = function () {
+      if (data.status.penalty()) {
+         return `<span title="${(data.status.stunPenalty ? 'stun: ' + data.status.stunPenalty + '\n' : '') + (data.status.damagePenalty ? 'damage: ' + data.status.damagePenalty + '\n' : '')}"> + Status (${data.status.penalty()})</span>`
       } else {
          return ''
       }
@@ -194,11 +194,11 @@ let calculateCharacterData = function (character) {
    let tests = {}
 
    // calculate default dice pool for skills
-   for (let [key, skill] of Object.entries(character.data.skills.active)) {
+   for (let [key, skill] of Object.entries(data.skills.active)) {
       if (skill.untrained) {
-         skill.pool = (skill.rank === 0 ? -1 : skill.rank) + character.data.attributes[skill.primaryAttribute].value
+         skill.pool = (skill.rank === 0 ? -1 : skill.rank) + data.attributes[skill.primaryAttribute].value
       } else {
-         skill.pool = skill.rank === 0 ? 0 : (skill.rank + character.data.attributes[skill.primaryAttribute].value)
+         skill.pool = skill.rank === 0 ? 0 : (skill.rank + data.attributes[skill.primaryAttribute].value)
       }
 
       // if you have a positive dice pool before status, add to the overview
@@ -207,7 +207,7 @@ let calculateCharacterData = function (character) {
             "formula": `${names.display(key)} + ${names.display(skill.primaryAttribute)}`,
             "applyStatus": true,
             "pool": function (context, applyStatus = true) {
-               return skill.pool + (applyStatus ? character.data.status.penalty() : 0)
+               return skill.pool + (applyStatus ? data.status.penalty() : 0)
             }
          }
 
@@ -216,7 +216,7 @@ let calculateCharacterData = function (character) {
                "formula": `${names.display(key)} + 2 + ${names.display(skill.primaryAttribute)}`,
                "applyStatus": true,
                "pool": function (context, applyStatus = true) {
-                  return skill.pool + 2 + (applyStatus ? character.data.status.penalty() : 0)
+                  return skill.pool + 2 + (applyStatus ? data.status.penalty() : 0)
                }
             }
          }
@@ -226,7 +226,7 @@ let calculateCharacterData = function (character) {
                "formula": `${names.display(key)} + 3 + ${names.display(skill.primaryAttribute)}`,
                "applyStatus": true,
                "pool": function (context, applyStatus = true) {
-                  return skill.pool + 3 + (applyStatus ? character.data.status.penalty() : 0)
+                  return skill.pool + 3 + (applyStatus ? data.status.penalty() : 0)
                }
             }
          }
@@ -234,162 +234,162 @@ let calculateCharacterData = function (character) {
    }
 
    // Judge Intentions (Willpower + Intuition + Conditions)
-   character.data.overview.tests.judgeintentions = {
+   data.overview.tests.judgeintentions = {
       "formula": `Willpower + Intuition`,
       "applyStatus": true,
       "pool": function (context, applyStatus = true) {
-         return character.data.attributes.willpower.value + character.data.attributes.intuition.value + (applyStatus ? character.data.status.penalty() : 0)
+         return data.attributes.willpower.value + data.attributes.intuition.value + (applyStatus ? data.status.penalty() : 0)
       }
    }
 
    // Composure (Willpower + Charisma + Conditions)
-   character.data.overview.tests.composure = {
+   data.overview.tests.composure = {
       "formula": `Willpower + Charisma`,
       "applyStatus": true,
       "pool": function (context, applyStatus = true) {
-         return character.data.attributes.willpower.value + character.data.attributes.charisma.value + (applyStatus ? character.data.status.penalty() : 0)
+         return data.attributes.willpower.value + data.attributes.charisma.value + (applyStatus ? data.status.penalty() : 0)
       }
    }
 
    // Memory (Logic + Intuition + Conditions)
-   character.data.overview.tests.memory = {
+   data.overview.tests.memory = {
       "formula": `Logic + Intuition`,
       "applyStatus": true,
       "pool": function (context, applyStatus = true) {
-         return character.data.attributes.logic.value + character.data.attributes.intuition.value + (applyStatus ? character.data.status.penalty() : 0)
+         return data.attributes.logic.value + data.attributes.intuition.value + (applyStatus ? data.status.penalty() : 0)
       }
    }
 
    // Lift (Body + Willpower + Conditions)
-   character.data.overview.tests.lift = {
+   data.overview.tests.lift = {
       "formula": `Body + Willpower`,
       "applyStatus": true,
       "pool": function (context, applyStatus = true) {
-         return character.data.attributes.body.value + character.data.attributes.willpower.value + (applyStatus ? character.data.status.penalty() : 0)
+         return data.attributes.body.value + data.attributes.willpower.value + (applyStatus ? data.status.penalty() : 0)
       }
    }
 
    // Heal - Stun (Body + Willpower), no condition
-   character.data.overview.tests.healstun = {
+   data.overview.tests.healstun = {
       "formula": `Body + Willpower`,
       "applyStatus": false,
       "pool": function (context, applyStatus = false) {
-         return character.data.attributes.body.value + character.data.attributes.willpower.value + (applyStatus ? character.data.status.penalty() : 0)
+         return data.attributes.body.value + data.attributes.willpower.value + (applyStatus ? data.status.penalty() : 0)
       }
    }
 
    // Heal - Damage (Body + Body), no condition
-   character.data.overview.tests.healdamage = {
+   data.overview.tests.healdamage = {
       "formula": `Body + Body`,
       "applyStatus": false,
       "pool": function (context, applyStatus = false) {
-         return character.data.attributes.body.value + character.data.attributes.body.value + (applyStatus ? character.data.status.penalty() : 0)
+         return data.attributes.body.value + data.attributes.body.value + (applyStatus ? data.status.penalty() : 0)
       }
    }
 
    // Heal - Overflow (Body + Body + Conditions)
-   character.data.overview.tests.healoverflow = {
+   data.overview.tests.healoverflow = {
       "formula": `Body + Body`,
       "applyStatus": true,
       "pool": function (context, applyStatus = true) {
-         return character.data.attributes.body.value + character.data.attributes.body.value + (applyStatus ? character.data.status.penalty() : 0)
+         return data.attributes.body.value + data.attributes.body.value + (applyStatus ? data.status.penalty() : 0)
       }
    }
 
    // Defend - Physical (Reaction + Intuition + Conditions)
-   character.data.overview.tests.defendphysical = {
+   data.overview.tests.defendphysical = {
       "formula": `Reaction + Intuition`,
       "applyStatus": true,
       "pool": function (context, applyStatus = true) {
-         return character.data.attributes.reaction.value + character.data.attributes.intuition.value + (applyStatus ? character.data.status.penalty() : 0)
+         return data.attributes.reaction.value + data.attributes.intuition.value + (applyStatus ? data.status.penalty() : 0)
       }
    }
 
    // Defend - Direct Magic (Willpower + Intuition + Conditions)
-   character.data.overview.tests.defenddirectmagic = {
+   data.overview.tests.defenddirectmagic = {
       "formula": `Willpower + Intuition`,
       "applyStatus": true,
       "pool": function (context, applyStatus = true) {
-         return character.data.attributes.willpower.value + character.data.attributes.intuition.value + (applyStatus ? character.data.status.penalty() : 0)
+         return data.attributes.willpower.value + data.attributes.intuition.value + (applyStatus ? data.status.penalty() : 0)
       }
    }
 
    // Defend - Indirect Magic (Reaction + Willpower + Conditions)
-   character.data.overview.tests.defendindirectmagic = {
+   data.overview.tests.defendindirectmagic = {
       "formula": `Reaction + Willpower`,
       "applyStatus": true,
       "pool": function (context, applyStatus = true) {
-         return character.data.attributes.reaction.value + character.data.attributes.willpower.value + (applyStatus ? character.data.status.penalty() : 0)
+         return data.attributes.reaction.value + data.attributes.willpower.value + (applyStatus ? data.status.penalty() : 0)
       }
    }
 
    // Defend - Detection Magic (Body + Willpower + Conditions)
-   character.data.overview.tests.defenddetectionmagic = {
+   data.overview.tests.defenddetectionmagic = {
       "formula": `Body + Willpower`,
       "applyStatus": true,
       "pool": function (context, applyStatus = true) {
-         return character.data.attributes.body.value + character.data.attributes.willpower.value + (applyStatus ? character.data.status.penalty() : 0)
+         return data.attributes.body.value + data.attributes.willpower.value + (applyStatus ? data.status.penalty() : 0)
       }
    }
 
    // Defend - Other Effects (Willpower + Logic + Conditions)
-   character.data.overview.tests.defendothermagic = {
+   data.overview.tests.defendothermagic = {
       "formula": `Willpower + Logic`,
       "applyStatus": true,
       "pool": function (context, applyStatus = true) {
-         return character.data.attributes.willpower.value + character.data.attributes.logic.value + (applyStatus ? character.data.status.penalty() : 0)
+         return data.attributes.willpower.value + data.attributes.logic.value + (applyStatus ? data.status.penalty() : 0)
       }
    }
 
    // Resist - Damage (Body), no condition
-   character.data.overview.tests.resistdamage = {
+   data.overview.tests.resistdamage = {
       "formula": `Body`,
       "applyStatus": false,
       "pool": function (context, applyStatus = false) {
-         return character.data.attributes.body.value + (applyStatus ? character.data.status.penalty() : 0)
+         return data.attributes.body.value + (applyStatus ? data.status.penalty() : 0)
       }
    }
 
    // if Awakened
-   if (character.data.nature === 'awakened') {
+   if (data.nature === 'awakened') {
       // Defend - Astral (Intuition + Logic + Conditions)
-      character.data.overview.tests.defendastral = {
+      data.overview.tests.defendastral = {
          "formula": `Intuition + Logic`,
          "applyStatus": true,
          "pool": function (context, applyStatus = true) {
-            return character.data.attributes.intuition.value + character.data.attributes.logic.value + (applyStatus ? character.data.status.penalty() : 0)
+            return data.attributes.intuition.value + data.attributes.logic.value + (applyStatus ? data.status.penalty() : 0)
          }
       }
 
       // Resist - Drain (Willpower + Logic | Charisma), no condition
-      character.data.overview.tests.resistdrain = {
-         "formula": `Willpower + ${names.display(character.data.magic.traditionAttribute)}`,
+      data.overview.tests.resistdrain = {
+         "formula": `Willpower + ${names.display(data.magic.traditionAttribute)}`,
          "applyStatus": false,
          "pool": function (context, applyStatus = false) {
-            return character.data.attributes.willpower.value + character.data.attributes[character.data.magic.traditionAttribute].value + (applyStatus ? character.data.status.penalty() : 0)
+            return data.attributes.willpower.value + data.attributes[data.magic.traditionAttribute].value + (applyStatus ? data.status.penalty() : 0)
          }
       }
    }
 
    // merge pre-defined and skill tests, and then sort them
    let ordered = {}
-   let unordered = { ...character.data.overview.tests, ...tests }
+   let unordered = { ...data.overview.tests, ...tests }
    Object.keys(unordered).sort((a, b) => { return a.localeCompare(b) }).forEach(key => {
       ordered[key] = unordered[key]
    })
 
-   character.data.overview.tests = ordered
+   data.overview.tests = ordered
 
    // initiative, also need gear for the matrix initative
    // todo - a button to add yourself to the initative in the correct manner. 
-   // character.data.initiative.physical.value = character.data.attributes.reaction.value + character.data.attributes.intuition.value
-   // character.data.initiative.astral.value = character.data.attributes.intuition.value + character.data.attributes.logic.value
-   // character.data.initiative.matrixar.value = character.data.attributes.reaction.value + character.data.attributes.intuition.value
-   // character.data.initiative.matrixvrcold.value = character.data.attributes.intuition.value + 0
-   // character.data.initiative.matrixvrhot.value = character.data.attributes.intuition.value + 0
+   // data.initiative.physical.value = data.attributes.reaction.value + data.attributes.intuition.value
+   // data.initiative.astral.value = data.attributes.intuition.value + data.attributes.logic.value
+   // data.initiative.matrixar.value = data.attributes.reaction.value + data.attributes.intuition.value
+   // data.initiative.matrixvrcold.value = data.attributes.intuition.value + 0
+   // data.initiative.matrixvrhot.value = data.attributes.intuition.value + 0
 
 
-   return character
+   return data
 
 }
 
