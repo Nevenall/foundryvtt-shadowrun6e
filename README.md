@@ -1,5 +1,7 @@
 # A FoundryVTT System Module for Shadowrun 6th World
 
+**This system is officially abandoned in favor of https://bitbucket.org/rpgframework-cloud/shadowrun6-eden/src/master/**
+
 This system module implements Shadowrun 6th World​ (edition) for FoundryVTT. 
 
 Although technically a fork of https://github.com/smilligan93/SR5-FoundryVTT this system starts from the groundup. 
@@ -15,7 +17,7 @@ Although technically a fork of https://github.com/smilligan93/SR5-FoundryVTT thi
 
 ## We are Actively Looking for Maintainers
 
-This system is up for adoption. Create an issue https://github.com/Nevenall/foundry-shadowrun6e/issues or find me on twitter if you're interested.
+This system is up for adoption. Create an issue https://github.com/Nevenall/foundry-shadowrun6e/issues if you're interested.
 
 ## Licenses
 
